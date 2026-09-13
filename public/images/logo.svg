@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 190" role="img" aria-labelledby="title">
-  <title id="title">Clínica Beleza</title>
-  <g fill="#946D16">
-    <text x="220" y="139" text-anchor="middle" font-family="Bodoni 72, Didot, Georgia, serif" font-size="154" letter-spacing="-18">CB</text>
-    <rect x="52" y="95" width="336" height="2"/><rect x="52" y="122" width="336" height="2"/>
-    <rect x="132" y="88" width="176" height="43" fill="#FAFAFA"/>
-    <text x="220" y="116" text-anchor="middle" font-family="Arial, sans-serif" font-size="19" font-weight="600" letter-spacing="2">CLÍNICA BELEZA</text>
-  </g>
-</svg>

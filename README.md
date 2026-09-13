@@ -33,8 +33,8 @@ The project is ready for Vercel through the standard Next.js deployment flow. It
 ## Content updates
 
 - Replace placeholder photography in `data/images.ts`.
-- Replace `public/images/logo.svg` with the final approved brand asset if supplied.
-- Update placeholder phone, team credentials, social links, opening hours, and clinical result imagery before launch.
+- The approved brand asset is `public/images/logo.png`.
+- Update placeholder team credentials, social links, and clinical result imagery before launch.
 - All visible translations live in `data/translations.ts`.
 
 ## Accessibility and SEO

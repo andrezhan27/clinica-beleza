@@ -1,6 +1,6 @@
 "use client";
 
-import { CalendarDays } from "lucide-react";
+import { MessageCircle } from "lucide-react";
 import { Navbar } from "@/components/navbar/Navbar";
 import { Hero } from "@/components/hero/Hero";
 import { Intro } from "@/components/sections/Intro";
@@ -23,8 +23,8 @@ const clinicSchema = {
   name: "Clínica Beleza",
   description: "Clínica de medicina estética em Saldanha, Lisboa.",
   address: { "@type": "PostalAddress", streetAddress: "Av. João Crisóstomo 63 A", postalCode: "1050-126", addressLocality: "Lisboa", addressCountry: "PT" },
-  telephone: "+351210000000",
-  email: "geral@clinicabeleza.pt",
+  telephone: "+351211500899",
+  email: "info@clinicabeleza.pt",
   areaServed: "Lisboa",
 };
 
@@ -47,7 +47,7 @@ export default function Home() {
       <FinalCTA />
     </main>
     <Footer />
-    <a className="mobile-sticky-cta" href="#contactos"><CalendarDays size={17} />{t.hero.primary}</a>
+    <a className="mobile-sticky-cta" href="https://wa.me/351935486918" target="_blank" rel="noreferrer"><MessageCircle size={17} />{t.finalCta.whatsapp}</a>
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(clinicSchema) }} />
   </>;
 }
