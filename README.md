@@ -29,12 +29,13 @@ npm run build
 npm run start
 ```
 
-The project is ready for Vercel through the standard Next.js deployment flow. Use Node.js 22.x and set `NEXT_PUBLIC_SITE_URL` to the final public origin (for example, `https://www.example.com`) so canonical URLs, Open Graph metadata, `robots.txt`, and `sitemap.xml` use the production domain. When the variable is omitted, Vercel's production project URL is used automatically.
+The project is ready for Vercel through the standard Next.js deployment flow. Use Node.js 22.x and set `NEXT_PUBLIC_SITE_URL` to the final public origin (for example, `https://www.example.com`) so canonical URLs, Open Graph metadata, `robots.txt`, and `sitemap.xml` use the production domain. Replace the example domain with the real one before launch. When the variable is omitted or blank, Vercel's production project URL is used automatically (then the deployment URL for previews). A nonblank value must be an absolute `http://` or `https://` URL.
 
 Before launch, run:
 
 ```bash
 npm run lint
+npm test
 npm run build
 ```
 
