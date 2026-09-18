@@ -338,7 +338,7 @@ img { object-fit: cover; }
 
 /* Final CTA + footer */
 .final-cta { min-height: 34rem; max-width: 1600px; margin: 0 auto; display: grid; grid-template-columns: minmax(20rem, .9fr) minmax(28rem, 1.1fr); align-items: stretch; background: var(--clinic-blue); color: white; border-top: 1px solid rgba(255,255,255,.12); }
-.final-cta__image { min-height: 34rem; position: relative; overflow: hidden; }
+.final-cta__image { min-height: 34rem; position: relative; overflow: hidden; contain: layout paint; isolation: isolate; }
 .final-cta__image img { object-fit: cover; object-position: center; }
 .final-cta__content { max-width: 850px; padding: clamp(4rem, 8vw, 8rem) clamp(2.5rem, 6vw, 7rem); align-self: center; }
 .final-cta h2 { margin: 0; font-size: clamp(2.8rem, 6vw, 6rem); font-weight: 390; letter-spacing: -.065em; line-height: .94; text-wrap: balance; }
