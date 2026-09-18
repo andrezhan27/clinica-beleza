@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useLanguage } from "@/context/LanguageProvider";
 
 export function Footer() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   return (
     <footer className="footer">
       <div className="footer__main">
@@ -29,11 +29,7 @@ export function Footer() {
         </div>
         <div>
           <h3>{t.footer.social}</h3>
-          <div className="socials">
-            <a href="#" aria-label="Instagram">IG</a>
-            <a href="#" aria-label="Facebook">FB</a>
-            <a href="#" aria-label="LinkedIn">IN</a>
-          </div>
+          <p className="footer__pending">{language === "pt" ? "Em breve" : "Coming soon"}</p>
         </div>
       </div>
       <div className="footer__legal">
@@ -49,7 +45,7 @@ export function Footer() {
         </div>
         <div className="footer__bottom">
           <p>{t.footer.rights}</p>
-          <div><a href="#">{t.footer.privacy}</a><a href="#">{t.footer.cookies}</a><a href="#">{t.footer.terms}</a></div>
+          <div aria-label="Informação legal em preparação"><span>{t.footer.privacy}</span><span>{t.footer.cookies}</span><span>{t.footer.terms}</span></div>
         </div>
       </div>
     </footer>

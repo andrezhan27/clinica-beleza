@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { category, treatment: slug } = await params;
   const treatment = getTreatment(category, slug);
   if (!treatment) return {};
-  const title = `${treatment.name.pt} em Lisboa | Clínica Beleza`;
+  const title = `${treatment.name.pt} em Lisboa`;
   const description = `${treatment.shortDescription.pt} Avaliação personalizada e acompanhamento especializado em Saldanha, Lisboa.`;
   const url = `/tratamentos/${category}/${slug}`;
   return { title, description, alternates: { canonical: url }, openGraph: { title, description, url, type: "article", images: [{ url: treatment.coverImage }] } };

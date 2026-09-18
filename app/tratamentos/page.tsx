@@ -6,7 +6,7 @@ import { treatmentCategories } from "@/data/treatment-categories";
 import { treatments } from "@/data/treatments";
 
 export const metadata: Metadata = {
-  title: "Tratamentos de Medicina Estética em Lisboa | Clínica Beleza",
+  title: "Tratamentos de Medicina Estética em Lisboa",
   description: "Explore os tratamentos de medicina estética, estética facial e corporal, medicina capilar, nutrição e bem-estar da Clínica Beleza, em Saldanha.",
   alternates: { canonical: "/tratamentos" },
   openGraph: { title: "Tratamentos personalizados | Clínica Beleza", description: "Descubra as áreas de tratamento da Clínica Beleza em Lisboa.", url: "/tratamentos", type: "website" },

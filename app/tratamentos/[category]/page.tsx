@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { category: slug } = await params;
   const category = getCategory(slug);
   if (!category) return {};
-  const title = `${category.name.pt} em Lisboa | Clínica Beleza`;
+  const title = `${category.name.pt} em Lisboa`;
   const description = `${category.shortDescription.pt} Conheça as opções disponíveis na Clínica Beleza, em Saldanha, Lisboa.`;
   const url = `/tratamentos/${category.slug}`;
   return { title, description, alternates: { canonical: url }, openGraph: { title, description, url, type: "website", images: [{ url: category.coverImage }] } };

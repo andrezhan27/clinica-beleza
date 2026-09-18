@@ -6,6 +6,7 @@ Premium bilingual landing page for Clínica Beleza, an aesthetic medicine clinic
 
 - Next.js 16 App Router with TypeScript
 - Tailwind CSS 4 and custom CSS properties
+- Self-hosted Manrope variable font
 - Framer Motion 12
 - Lucide React
 - Local PT / EN translations through React Context
@@ -28,7 +29,16 @@ npm run build
 npm run start
 ```
 
-The project is ready for Vercel through the standard Next.js deployment flow. It also includes optional `sites:dev`, `sites:build`, and `sites:start` scripts for the Sites runtime used by the hosted preview.
+The project is ready for Vercel through the standard Next.js deployment flow. Use Node.js 22.x and set `NEXT_PUBLIC_SITE_URL` to the final public origin (for example, `https://www.example.com`) so canonical URLs, Open Graph metadata, `robots.txt`, and `sitemap.xml` use the production domain. When the variable is omitted, Vercel's production project URL is used automatically.
+
+Before launch, run:
+
+```bash
+npm run lint
+npm run build
+```
+
+The repository also includes optional `sites:dev`, `sites:build`, and `sites:start` scripts for the Sites runtime used by the hosted preview.
 
 ## Content updates
 

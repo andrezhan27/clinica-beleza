@@ -1,6 +1,3 @@
-"use client";
-
-import { MessageCircle } from "lucide-react";
 import { Navbar } from "@/components/navbar/Navbar";
 import { Hero } from "@/components/hero/Hero";
 import { Intro } from "@/components/sections/Intro";
@@ -15,8 +12,6 @@ import { ClinicSpace } from "@/components/sections/ClinicSpace";
 import { Financing } from "@/components/sections/Financing";
 import { Location } from "@/components/sections/Location";
 import { Footer } from "@/components/footer/Footer";
-import { useLanguage } from "@/context/LanguageProvider";
-import { BOOKING_WHATSAPP_URL } from "@/lib/booking";
 
 const clinicSchema = {
   "@context": "https://schema.org",
@@ -30,7 +25,6 @@ const clinicSchema = {
 };
 
 export default function Home() {
-  const { t } = useLanguage();
   return <>
     <Navbar />
     <main>
@@ -48,7 +42,6 @@ export default function Home() {
       <Location />
     </main>
     <Footer />
-    <a className="mobile-sticky-cta" href={BOOKING_WHATSAPP_URL} target="_blank" rel="noreferrer"><MessageCircle size={17} />{t.finalCta.whatsapp}</a>
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(clinicSchema) }} />
   </>;
 }
