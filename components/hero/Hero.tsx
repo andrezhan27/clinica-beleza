@@ -23,13 +23,11 @@ export function Hero() {
         <motion.p className="hero__lead" initial={reduce ? false : { opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .7, delay: .16 }}>{t.hero.copy}</motion.p>
         <motion.div className="hero__actions" initial={reduce ? false : { opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: .7, delay: .28 }}>
           <MagneticButton><ClinicButton href={BOOKING_WHATSAPP_URL} target="_blank" rel="noreferrer" arrow>{t.hero.primary}</ClinicButton></MagneticButton>
-          <ClinicButton href="/tratamentos" variant="secondary">{t.hero.secondary}</ClinicButton>
         </motion.div>
-        <div className="hero__location"><span />{t.hero.note}</div>
       </div>
       <motion.div className="hero__visual" style={{ y }} initial={reduce ? false : { clipPath: "inset(0 100% 0 0)" }} animate={{ clipPath: "inset(0 0% 0 0)" }} transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}>
         <Image src="/images/home-hero.webp" fill priority sizes="(max-width: 800px) 100vw, 55vw" alt={t.hero.imageAlt} />
-        <div className="hero__image-label"><strong>CB</strong><span>SAÚDE · BELEZA · BEM-ESTAR</span></div>
+        <div className="hero__image-label"><Image className="hero__image-logo" src="/images/brand/logo.webp" width={138} height={69} alt="" aria-hidden="true" /><span>SAÚDE · BELEZA · BEM-ESTAR</span></div>
       </motion.div>
       <a href="#clinica" className="hero__scroll" aria-label="Scroll"><ArrowDown size={17} /></a>
     </section>

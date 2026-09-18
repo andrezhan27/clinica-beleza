@@ -2,11 +2,11 @@ export type Language = "pt" | "en";
 
 const pt = {
   nav: { home: "Início", clinic: "Clínica", treatments: "Tratamentos", results: "Resultados", team: "Equipa", contacts: "Contactos", booking: "Marcação", menu: "Abrir menu", close: "Fechar menu" },
-  hero: { eyebrow: "CLÍNICA DE MEDICINA ESTÉTICA · LISBOA", title: "Beleza, saúde e bem-estar em equilíbrio.", copy: "Uma abordagem clínica e personalizada, onde a medicina estética encontra o cuidado atento — para resultados naturais que respeitam quem é.", primary: "Marcar avaliação", secondary: "Conhecer tratamentos", note: "Saldanha · Lisboa", imageAlt: "Interior luminoso de uma clínica contemporânea" },
-  intro: { eyebrow: "A nossa filosofia", title: "A nossa arte estética para os seus resultados requintados.", p1: "O segredo da beleza está no equilíbrio entre ciência e arte. Na Clínica Beleza, transformamos cada tratamento numa experiência única, criando resultados que espelham sofisticação e bem-estar.", principles: [
-    { title: "Profissionais especialistas", text: "Tratamentos administrados por profissionais de saúde especializados." },
-    { title: "Ambiente seguro", text: "Cuidados de alta qualidade prestados num ambiente clínico seguro." },
-    { title: "Tratamentos personalizados", text: "Planos personalizados para otimizar o seu bem-estar e respeitar os seus objetivos." },
+  hero: { eyebrow: "MEDICINA ESTÉTICA · SALDANHA, LISBOA", title: "Clínica Beleza", copy: "Cuidado médico personalizado para resultados naturais, com saúde, beleza e bem-estar em equilíbrio.", primary: "Marcar avaliação", secondary: "Conhecer tratamentos", note: "Saldanha · Lisboa", imageAlt: "Interior luminoso de uma clínica contemporânea" },
+  intro: { eyebrow: "A nossa filosofia", title: "Ciência, cuidado e naturalidade.", p1: "Cada plano começa com uma avaliação atenta e respeita o que a torna única.", principles: [
+    { title: "Especialistas", text: "Profissionais de saúde dedicados ao seu cuidado." },
+    { title: "Segurança", text: "Rigor clínico num ambiente tranquilo." },
+    { title: "À sua medida", text: "Planos ajustados aos seus objetivos." },
   ] },
   categories: { eyebrow: "Tratamentos", title: "Um cuidado completo, pensado à sua medida.", intro: "Seis áreas complementares, organizadas para tornar simples a escolha do acompanhamento certo.", explore: "Explorar tratamentos", items: [
     { name: "Medicina Estética", description: "Tratamentos médicos para realçar, prevenir e cuidar com naturalidade." },
@@ -52,11 +52,11 @@ const pt = {
 
 const en: typeof pt = {
   nav: { home: "Home", clinic: "Clinic", treatments: "Treatments", results: "Results", team: "Team", contacts: "Contact", booking: "Book now", menu: "Open menu", close: "Close menu" },
-  hero: { eyebrow: "AESTHETIC MEDICINE CLINIC · LISBON", title: "Beauty, health and wellbeing in balance.", copy: "A personalised clinical approach, where aesthetic medicine meets attentive care — for natural results that respect who you are.", primary: "Book assessment", secondary: "Explore treatments", note: "Saldanha · Lisbon", imageAlt: "Bright interior of a contemporary clinic" },
-  intro: { eyebrow: "Our philosophy", title: "Our aesthetic artistry, for beautifully refined results.", p1: "The secret to beauty lies in the balance between science and art. At Clínica Beleza, every treatment becomes a unique experience, creating results that reflect sophistication and wellbeing.", principles: [
-    { title: "Specialist professionals", text: "Treatments delivered by specialised healthcare professionals." },
-    { title: "A safe environment", text: "High-quality care provided in a safe clinical environment." },
-    { title: "Personalised treatments", text: "Personalised plans designed around your wellbeing and individual goals." },
+  hero: { eyebrow: "AESTHETIC MEDICINE · SALDANHA, LISBON", title: "Clínica Beleza", copy: "Personalised medical care for natural results, bringing health, beauty and wellbeing into balance.", primary: "Book assessment", secondary: "Explore treatments", note: "Saldanha · Lisbon", imageAlt: "Bright interior of a contemporary clinic" },
+  intro: { eyebrow: "Our philosophy", title: "Science, care and natural results.", p1: "Every plan begins with an attentive assessment and respects what makes you unique.", principles: [
+    { title: "Specialists", text: "Healthcare professionals dedicated to your care." },
+    { title: "Safety", text: "Clinical rigour in a calm environment." },
+    { title: "Made for you", text: "Plans shaped around your goals." },
   ] },
   categories: { eyebrow: "Treatments", title: "Complete care, considered around you.", intro: "Six complementary areas, organised to make finding the right care simple.", explore: "Explore treatments", items: [
     { name: "Aesthetic Medicine", description: "Medical treatments to enhance, prevent and care with a natural approach." },
