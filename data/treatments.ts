@@ -19,7 +19,7 @@ export type Treatment = {
   recovery?: LocalizedText;
   results?: LocalizedText;
   faq?: TreatmentFAQ[];
-  heroImage: string;
+  coverImage: string;
   gallery: string[];
   featured?: boolean;
   relatedTreatments?: string[];
@@ -75,7 +75,7 @@ const makeTreatment = (seed: Seed): Treatment => {
       { question: { pt: "Quantas sessões são necessárias?", en: "How many sessions will I need?" }, answer: { pt: "O número de sessões depende do ponto de partida, da resposta individual e do plano recomendado pela equipa.", en: "The number of sessions depends on your starting point, individual response and the plan recommended by the team." } },
       { question: { pt: "Quando poderei observar resultados?", en: "When will I see results?" }, answer: { pt: "Cada tratamento tem uma evolução própria. Na avaliação explicamos quando poderá esperar alterações e como acompanhar os resultados.", en: "Each treatment progresses differently. During your assessment we explain when changes may appear and how results are monitored." } },
     ],
-    heroImage: `${root}/hero.webp`,
+    coverImage: `${root}/gallery-01.webp`,
     gallery: Array.from({ length: seed.galleryCount ?? 2 }, (_, index) => `${root}/gallery-${String(index + 1).padStart(2, "0")}.webp`),
     featured: seed.featured,
     relatedTreatments: seed.related,
@@ -85,9 +85,9 @@ const makeTreatment = (seed: Seed): Treatment => {
 
 const seeds: Seed[] = [
   { slug: "consulta-de-avaliacao", category: "medicina-estetica", pt: "Consulta de Avaliação", en: "Aesthetic Assessment", descriptionPt: "Uma consulta dedicada a compreender os seus objetivos e construir um plano clínico personalizado.", descriptionEn: "A dedicated consultation to understand your goals and build a personalised clinical plan.", related: ["toxina-botulinica", "bioestimuladores", "fillers"], galleryCount: 4 },
-  { slug: "toxina-botulinica", category: "medicina-estetica", pt: "Toxina Botulínica", en: "Botulinum Toxin", descriptionPt: "Uma abordagem médica para suavizar linhas de expressão, preservando a naturalidade do rosto.", descriptionEn: "A medical approach to soften expression lines while preserving a natural appearance.", featured: true, related: ["bioestimuladores", "fillers", "profhilo"], searchTerms: ["botox"], galleryCount: 4 },
+  { slug: "toxina-botulinica", category: "medicina-estetica", pt: "Toxina Botulínica", en: "Botulinum Toxin", descriptionPt: "Uma abordagem médica para suavizar linhas de expressão, preservando a naturalidade do rosto.", descriptionEn: "A medical approach to soften expression lines while preserving a natural appearance.", featured: true, related: ["bioestimuladores", "fillers", "profhilo"], searchTerms: ["botox"] },
   { slug: "fios-tensores", category: "medicina-estetica", pt: "Fios Tensores", en: "Thread Lift", descriptionPt: "Fios absorvíveis para suporte dos tecidos e melhoria progressiva dos contornos faciais.", descriptionEn: "Absorbable threads designed to support tissue and progressively refine facial contours.", related: ["bioestimuladores", "fillers", "hifu-rosto"] },
-  { slug: "bioestimuladores", category: "medicina-estetica", pt: "Bioestimuladores", en: "Biostimulators", descriptionPt: "Estimulação gradual de colagénio para melhorar firmeza, textura e qualidade da pele.", descriptionEn: "Gradual collagen stimulation to improve skin firmness, texture and quality.", featured: true, related: ["toxina-botulinica", "profhilo", "microneedling"] },
+  { slug: "bioestimuladores", category: "medicina-estetica", pt: "Bioestimuladores", en: "Biostimulators", descriptionPt: "Estimulação gradual de colagénio para melhorar firmeza, textura e qualidade da pele.", descriptionEn: "Gradual collagen stimulation to improve skin firmness, texture and quality.", featured: true, related: ["toxina-botulinica", "profhilo", "microneedling"], galleryCount: 3 },
   { slug: "fillers", category: "medicina-estetica", pt: "Fillers", en: "Dermal Fillers", descriptionPt: "Preenchimento médico para harmonizar volumes e contornos de forma subtil e individualizada.", descriptionEn: "Medical filler treatment to harmonise volume and contours in a subtle, individual way.", related: ["toxina-botulinica", "bioestimuladores", "profhilo"], searchTerms: ["preenchimento", "ácido hialurónico"] },
   { slug: "peeling-quimico", category: "medicina-estetica", pt: "Peeling Químico", en: "Chemical Peel", descriptionPt: "Renovação controlada da pele para melhorar textura, luminosidade e uniformidade.", descriptionEn: "Controlled skin renewal to improve texture, radiance and evenness.", related: ["microneedling", "mesoterapia", "terapia-fotobiodinamica"] },
   { slug: "plasma-rico-em-plaquetas", category: "medicina-estetica", pt: "Plasma Rico em Plaquetas", en: "Platelet-Rich Plasma", descriptionPt: "Protocolo autólogo que utiliza componentes do próprio sangue para apoiar a regeneração da pele.", descriptionEn: "An autologous protocol using components from your own blood to support skin regeneration.", related: ["mesoterapia", "microneedling", "profhilo"], searchTerms: ["prp"] },

@@ -3,7 +3,11 @@ export type Language = "pt" | "en";
 const pt = {
   nav: { home: "Início", clinic: "Clínica", treatments: "Tratamentos", results: "Resultados", team: "Equipa", contacts: "Contactos", booking: "Marcação", menu: "Abrir menu", close: "Fechar menu" },
   hero: { eyebrow: "CLÍNICA DE MEDICINA ESTÉTICA · LISBOA", title: "Beleza, saúde e bem-estar em equilíbrio.", copy: "Uma abordagem clínica e personalizada, onde a medicina estética encontra o cuidado atento — para resultados naturais que respeitam quem é.", primary: "Marcar avaliação", secondary: "Conhecer tratamentos", note: "Saldanha · Lisboa", imageAlt: "Interior luminoso de uma clínica contemporânea" },
-  intro: { eyebrow: "A nossa filosofia", title: "A beleza começa no equilíbrio.", p1: "Acreditamos que a verdadeira beleza vai além da aparência. Nasce do equilíbrio entre saúde, bem-estar, confiança e longevidade.", p2: "Combinamos medicina estética, estética avançada e acompanhamento clínico para criar planos adaptados a cada pessoa, aos seus objetivos e ao seu ritmo.", principles: ["Resultados naturais", "Planos personalizados", "Acompanhamento especializado"] },
+  intro: { eyebrow: "A nossa filosofia", title: "A nossa arte estética para os seus resultados requintados.", p1: "O segredo da beleza está no equilíbrio entre ciência e arte. Na Clínica Beleza, transformamos cada tratamento numa experiência única, criando resultados que espelham sofisticação e bem-estar.", principles: [
+    { title: "Profissionais especialistas", text: "Tratamentos administrados por profissionais de saúde especializados." },
+    { title: "Ambiente seguro", text: "Cuidados de alta qualidade prestados num ambiente clínico seguro." },
+    { title: "Tratamentos personalizados", text: "Planos personalizados para otimizar o seu bem-estar e respeitar os seus objetivos." },
+  ] },
   categories: { eyebrow: "Tratamentos", title: "Um cuidado completo, pensado à sua medida.", intro: "Seis áreas complementares, organizadas para tornar simples a escolha do acompanhamento certo.", explore: "Explorar tratamentos", items: [
     { name: "Medicina Estética", description: "Tratamentos médicos para realçar, prevenir e cuidar com naturalidade." },
     { name: "Estética Facial", description: "Protocolos avançados para a saúde, textura e luminosidade da pele." },
@@ -26,6 +30,10 @@ const pt = {
   team: { eyebrow: "A nossa equipa", title: "Especialistas dedicados ao seu cuidado.", intro: "Uma equipa multidisciplinar, unida por uma visão exigente, humana e responsável da medicina estética.", profile: "Ver perfil", members: [
     { name: "Dra. Sofia Almeida", role: "Medicina Estética", credential: "Cédula profissional · informação a confirmar" },
     { name: "Dra. Marta Ribeiro", role: "Medicina Capilar", credential: "Cédula profissional · informação a confirmar" },
+    { name: "Dr. João Matos", role: "Estética Avançada", credential: "Cédula profissional · informação a confirmar" },
+    { name: "Dr. Miguel Santos", role: "Medicina Regenerativa", credential: "Cédula profissional · informação a confirmar" },
+    { name: "Dra. Leonor Costa", role: "Nutrição Clínica", credential: "Cédula profissional · informação a confirmar" },
+    { name: "Dra. Beatriz Ferreira", role: "Saúde e Bem-estar", credential: "Cédula profissional · informação a confirmar" },
   ] },
   results: { eyebrow: "Resultados", title: "Resultados reais, sempre com naturalidade.", copy: "Cada resultado é individual. A avaliação clínica permite definir expectativas responsáveis e um plano adequado à anatomia, saúde e objetivos de cada pessoa.", before: "Antes", after: "Depois", disclaimer: "Imagens ilustrativas de espaço reservado para casos clínicos. Os resultados variam de pessoa para pessoa e não podem ser garantidos." },
   testimonials: { eyebrow: "Experiência de quem nos visita", title: "Cuidado que se sente, confiança que permanece.", reviews: "Mais de 250 avaliações de clientes", items: [
@@ -45,7 +53,11 @@ const pt = {
 const en: typeof pt = {
   nav: { home: "Home", clinic: "Clinic", treatments: "Treatments", results: "Results", team: "Team", contacts: "Contact", booking: "Book now", menu: "Open menu", close: "Close menu" },
   hero: { eyebrow: "AESTHETIC MEDICINE CLINIC · LISBON", title: "Beauty, health and wellbeing in balance.", copy: "A personalised clinical approach, where aesthetic medicine meets attentive care — for natural results that respect who you are.", primary: "Book assessment", secondary: "Explore treatments", note: "Saldanha · Lisbon", imageAlt: "Bright interior of a contemporary clinic" },
-  intro: { eyebrow: "Our philosophy", title: "Beauty begins with balance.", p1: "We believe true beauty goes far beyond appearance. It grows from the balance between health, wellbeing, confidence and longevity.", p2: "We combine aesthetic medicine, advanced aesthetics and clinical follow-up to create plans tailored to each person, their goals and their pace.", principles: ["Natural results", "Personalised plans", "Specialist follow-up"] },
+  intro: { eyebrow: "Our philosophy", title: "Our aesthetic artistry, for beautifully refined results.", p1: "The secret to beauty lies in the balance between science and art. At Clínica Beleza, every treatment becomes a unique experience, creating results that reflect sophistication and wellbeing.", principles: [
+    { title: "Specialist professionals", text: "Treatments delivered by specialised healthcare professionals." },
+    { title: "A safe environment", text: "High-quality care provided in a safe clinical environment." },
+    { title: "Personalised treatments", text: "Personalised plans designed around your wellbeing and individual goals." },
+  ] },
   categories: { eyebrow: "Treatments", title: "Complete care, considered around you.", intro: "Six complementary areas, organised to make finding the right care simple.", explore: "Explore treatments", items: [
     { name: "Aesthetic Medicine", description: "Medical treatments to enhance, prevent and care with a natural approach." },
     { name: "Facial Aesthetics", description: "Advanced protocols for skin health, texture and radiance." },
@@ -68,6 +80,10 @@ const en: typeof pt = {
   team: { eyebrow: "Our team", title: "Specialists dedicated to your care.", intro: "A multidisciplinary team united by a rigorous, human and responsible vision of aesthetic medicine.", profile: "View profile", members: [
     { name: "Dr Sofia Almeida", role: "Aesthetic Medicine", credential: "Professional registration · details to be confirmed" },
     { name: "Dr Marta Ribeiro", role: "Hair Medicine", credential: "Professional registration · details to be confirmed" },
+    { name: "Dr João Matos", role: "Advanced Aesthetics", credential: "Professional registration · details to be confirmed" },
+    { name: "Dr Miguel Santos", role: "Regenerative Medicine", credential: "Professional registration · details to be confirmed" },
+    { name: "Dr Leonor Costa", role: "Clinical Nutrition", credential: "Professional registration · details to be confirmed" },
+    { name: "Dr Beatriz Ferreira", role: "Health and Wellbeing", credential: "Professional registration · details to be confirmed" },
   ] },
   results: { eyebrow: "Results", title: "Real results, always with a natural look.", copy: "Every result is individual. A clinical assessment helps set responsible expectations and a plan suited to each person's anatomy, health and goals.", before: "Before", after: "After", disclaimer: "Illustrative space reserved for clinical cases. Results vary from person to person and cannot be guaranteed." },
   testimonials: { eyebrow: "Patient experience", title: "Care you can feel. Trust that lasts.", reviews: "More than 250 client reviews", items: [

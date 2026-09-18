@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     locale: "pt_PT",
     type: "website",
   },
-  icons: { icon: "/favicon.svg" },
+  icons: { icon: "/images/brand/favicon.svg?v=2" },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

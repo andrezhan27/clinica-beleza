@@ -33,7 +33,14 @@ The project is ready for Vercel through the standard Next.js deployment flow. It
 ## Content updates
 
 - Replace placeholder photography in `data/images.ts`.
-- The approved brand asset is `public/images/logo.png`.
+- Brand assets live in `public/images/brand`, including the approved logo, favicon, and marble background.
+
+## Image organization
+
+- Shared homepage assets live directly in `public/images` and use descriptive names such as `home-hero.webp`, `space-1.webp`, and `before-1.webp`.
+- Each treatment category has one cover at `public/images/treatments/<category>/category.webp`. It is used on the treatment catalogue, the homepage category grid, the category page hero, and category social metadata. When replacing a category cover in place, update its `?v=` content hash in `data/treatment-categories.ts` so Next.js generates a fresh optimized render.
+- Each treatment stores only `gallery-01.webp`, `gallery-02.webp`, and any additional numbered gallery images in `public/images/treatments/<category>/<treatment>/`. The first gallery image is also the treatment cover used by cards, the treatment page hero, and social metadata.
+- Team, clinic-space, and one illustrative results pair currently use the remote image URLs centralized in `data/images.ts`.
 - Update placeholder team credentials, social links, and clinical result imagery before launch.
 - All visible translations live in `data/translations.ts`.
 

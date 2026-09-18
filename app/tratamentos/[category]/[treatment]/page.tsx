@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const title = `${treatment.name.pt} em Lisboa | Clínica Beleza`;
   const description = `${treatment.shortDescription.pt} Avaliação personalizada e acompanhamento especializado em Saldanha, Lisboa.`;
   const url = `/tratamentos/${category}/${slug}`;
-  return { title, description, alternates: { canonical: url }, openGraph: { title, description, url, type: "article", images: [{ url: treatment.heroImage }] } };
+  return { title, description, alternates: { canonical: url }, openGraph: { title, description, url, type: "article", images: [{ url: treatment.coverImage }] } };
 }
 
 export default async function TreatmentPage({ params }: Props) {

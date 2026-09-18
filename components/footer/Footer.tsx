@@ -10,7 +10,7 @@ export function Footer() {
     <footer className="footer">
       <div className="footer__main">
         <div className="footer__brand">
-          <Image src="/images/logo.png" width={1774} height={887} sizes="190px" alt="Clínica Beleza" />
+          <Image src="/images/brand/logo.webp" width={1774} height={887} sizes="190px" alt="Clínica Beleza" />
           <p>{t.footer.copy}</p>
         </div>
         <div>
@@ -41,10 +41,10 @@ export function Footer() {
           <h3>{t.footer.regulatory}</h3>
           <div className="regulatory-logos">
             <a href="https://www.livroreclamacoes.pt/Inicio/" target="_blank" rel="noreferrer" aria-label={t.footer.complaints}>
-              <Image src="/images/livro.png" width={600} height={300} alt={t.footer.complaints} />
+              <Image src="/images/livro.webp" width={600} height={300} alt={t.footer.complaints} />
             </a>
-            <Image src="/images/ers.png" width={1080} height={1080} alt="Entidade Reguladora da Saúde" />
-            <Image src="/images/saude.png" width={1080} height={1080} alt="Ministério da Saúde" />
+            <Image src="/images/ers.webp" width={1080} height={1080} alt="Entidade Reguladora da Saúde" />
+            <Image src="/images/saude.webp" width={1080} height={1080} alt="Ministério da Saúde" />
           </div>
         </div>
         <div className="footer__bottom">

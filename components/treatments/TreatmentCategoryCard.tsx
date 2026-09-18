@@ -9,7 +9,7 @@ export function TreatmentCategoryCard({ category, index }: { category: Treatment
   const { language } = useLanguage();
   return (
     <a className="treatment-category-card" href={`/tratamentos/${category.slug}`}>
-      <div className="treatment-category-card__image"><Image src={category.heroImage} alt={category.name[language]} fill sizes="(max-width: 760px) 100vw, 50vw" /></div>
+      <div className="treatment-category-card__image"><Image src={category.coverImage} alt={category.name[language]} fill sizes="(max-width: 760px) 100vw, 50vw" /></div>
       <div className="treatment-category-card__body">
         <span>0{index + 1}</span>
         <div><h2>{category.name[language]}</h2><p>{category.shortDescription[language]}</p><small>{category.treatments.length} {language === "pt" ? "tratamentos" : "treatments"}</small></div>

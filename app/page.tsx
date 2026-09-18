@@ -14,7 +14,6 @@ import { Testimonials } from "@/components/sections/Testimonials";
 import { ClinicSpace } from "@/components/sections/ClinicSpace";
 import { Financing } from "@/components/sections/Financing";
 import { Location } from "@/components/sections/Location";
-import { FinalCTA } from "@/components/sections/FinalCTA";
 import { Footer } from "@/components/footer/Footer";
 import { useLanguage } from "@/context/LanguageProvider";
 import { BOOKING_WHATSAPP_URL } from "@/lib/booking";
@@ -47,7 +46,6 @@ export default function Home() {
       <ClinicSpace />
       <Financing />
       <Location />
-      <FinalCTA />
     </main>
     <Footer />
     <a className="mobile-sticky-cta" href={BOOKING_WHATSAPP_URL} target="_blank" rel="noreferrer"><MessageCircle size={17} />{t.finalCta.whatsapp}</a>
