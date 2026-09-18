@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useLanguage } from "@/context/LanguageProvider";
 
 export function Footer() {
@@ -14,11 +15,11 @@ export function Footer() {
         </div>
         <div>
           <h3>{t.footer.navigation}</h3>
-          <a href="#clinica">{t.nav.clinic}</a>
-          <a href="#tratamentos">{t.nav.treatments}</a>
-          <a href="#equipa">{t.nav.team}</a>
-          <a href="#resultados">{t.nav.results}</a>
-          <a href="#contactos">{t.nav.contacts}</a>
+          <Link href="/#clinica">{t.nav.clinic}</Link>
+          <Link href="/tratamentos">{t.nav.treatments}</Link>
+          <Link href="/#equipa">{t.nav.team}</Link>
+          <Link href="/#resultados">{t.nav.results}</Link>
+          <Link href="/#contactos">{t.nav.contacts}</Link>
         </div>
         <div>
           <h3>{t.footer.contact}</h3>
@@ -37,9 +38,12 @@ export function Footer() {
       </div>
       <div className="footer__regulatory">
         <h3>{t.footer.regulatory}</h3>
-        <div className="regulatory-art">
-          <Image src="/images/regulatory-logos.png" width={530} height={198} alt="Livro de Reclamações, ERS e Ministério da Saúde" />
-          <a href="https://www.livroreclamacoes.pt/Inicio/" target="_blank" rel="noreferrer" aria-label={t.footer.complaints}><span className="sr-only">{t.footer.complaints}</span></a>
+        <div className="regulatory-logos">
+          <a href="https://www.livroreclamacoes.pt/Inicio/" target="_blank" rel="noreferrer" aria-label={t.footer.complaints}>
+            <Image src="/images/livro.png" width={500} height={207} alt={t.footer.complaints} />
+          </a>
+          <Image src="/images/ers.png" width={1080} height={1080} alt="Entidade Reguladora da Saúde" />
+          <Image src="/images/saude.png" width={359} height={557} alt="Ministério da Saúde" />
         </div>
       </div>
       <div className="footer__bottom">

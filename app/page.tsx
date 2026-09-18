@@ -5,6 +5,7 @@ import { Navbar } from "@/components/navbar/Navbar";
 import { Hero } from "@/components/hero/Hero";
 import { Intro } from "@/components/sections/Intro";
 import { TreatmentCategories } from "@/components/sections/TreatmentCategories";
+import { ConcernDiscovery } from "@/components/sections/ConcernDiscovery";
 import { FeaturedTreatments } from "@/components/sections/FeaturedTreatments";
 import { WhyClinic } from "@/components/sections/WhyClinic";
 import { Team } from "@/components/sections/Team";
@@ -16,6 +17,7 @@ import { Location } from "@/components/sections/Location";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 import { Footer } from "@/components/footer/Footer";
 import { useLanguage } from "@/context/LanguageProvider";
+import { BOOKING_WHATSAPP_URL } from "@/lib/booking";
 
 const clinicSchema = {
   "@context": "https://schema.org",
@@ -35,6 +37,7 @@ export default function Home() {
     <main>
       <Hero />
       <Intro />
+      <ConcernDiscovery />
       <TreatmentCategories />
       <FeaturedTreatments />
       <WhyClinic />
@@ -47,7 +50,7 @@ export default function Home() {
       <FinalCTA />
     </main>
     <Footer />
-    <a className="mobile-sticky-cta" href="https://wa.me/351935486918" target="_blank" rel="noreferrer"><MessageCircle size={17} />{t.finalCta.whatsapp}</a>
+    <a className="mobile-sticky-cta" href={BOOKING_WHATSAPP_URL} target="_blank" rel="noreferrer"><MessageCircle size={17} />{t.finalCta.whatsapp}</a>
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(clinicSchema) }} />
   </>;
 }

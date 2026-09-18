@@ -7,6 +7,7 @@ import { ArrowDown } from "lucide-react";
 import { useLanguage } from "@/context/LanguageProvider";
 import { ClinicButton } from "@/components/ui/ClinicButton";
 import { MagneticButton } from "@/components/ui/MagneticButton";
+import { BOOKING_WHATSAPP_URL } from "@/lib/booking";
 
 export function Hero() {
   const { t } = useLanguage();
@@ -21,8 +22,8 @@ export function Hero() {
         <motion.h1 initial={reduce ? false : { opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .7, delay: .08 }}>{t.hero.title}</motion.h1>
         <motion.p className="hero__lead" initial={reduce ? false : { opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .7, delay: .16 }}>{t.hero.copy}</motion.p>
         <motion.div className="hero__actions" initial={reduce ? false : { opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: .7, delay: .28 }}>
-          <MagneticButton><ClinicButton href="#contactos" arrow>{t.hero.primary}</ClinicButton></MagneticButton>
-          <ClinicButton href="#tratamentos" variant="secondary">{t.hero.secondary}</ClinicButton>
+          <MagneticButton><ClinicButton href={BOOKING_WHATSAPP_URL} target="_blank" rel="noreferrer" arrow>{t.hero.primary}</ClinicButton></MagneticButton>
+          <ClinicButton href="/tratamentos" variant="secondary">{t.hero.secondary}</ClinicButton>
         </motion.div>
         <div className="hero__location"><span />{t.hero.note}</div>
       </div>
