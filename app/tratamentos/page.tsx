@@ -13,5 +13,5 @@ export const metadata: Metadata = {
 };
 
 export default function TreatmentsPage() {
-  return <><Navbar /><TreatmentsLanding categories={treatmentCategories} treatments={treatments} /><Footer /></>;
+  return <><Navbar /><div className="route-scroll-start" aria-hidden="true" /><TreatmentsLanding categories={treatmentCategories} treatments={treatments} /><Footer /></>;
 }

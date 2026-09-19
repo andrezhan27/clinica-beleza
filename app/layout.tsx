@@ -40,7 +40,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="pt">
+    <html lang="pt" data-scroll-behavior="smooth">
       <body><LanguageProvider>{children}</LanguageProvider></body>
     </html>
   );

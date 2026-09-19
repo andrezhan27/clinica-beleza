@@ -34,6 +34,7 @@ img { object-fit: cover; }
 :focus-visible { outline: 2px solid var(--clinic-gold); outline-offset: 4px; }
 
 .section { max-width: var(--max-width); margin: 0 auto; padding: clamp(4.25rem, 7vw, 6.75rem) var(--section-inline); }
+.route-scroll-start { height: 1px; margin-bottom: -1px; pointer-events: none; }
 .eyebrow { margin: 0 0 1.5rem; color: var(--clinic-logo-gold); font-size: .72rem; font-weight: 700; letter-spacing: .2em; line-height: 1.4; text-transform: uppercase; }
 .section-heading { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(15rem, .8fr); column-gap: clamp(3rem, 9vw, 9rem); align-items: end; margin-bottom: clamp(2.5rem, 5vw, 4.5rem); }
 .section-heading .eyebrow { grid-column: 1 / -1; }

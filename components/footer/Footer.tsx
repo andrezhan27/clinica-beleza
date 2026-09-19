@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { TreatmentsCatalogueLink } from "@/components/navigation/TreatmentsCatalogueLink";
 import { useLanguage } from "@/context/LanguageProvider";
 
 export function Footer() {
@@ -16,7 +17,7 @@ export function Footer() {
         <div>
           <h3>{t.footer.navigation}</h3>
           <Link href="/#clinica">{t.nav.clinic}</Link>
-          <Link href="/tratamentos">{t.nav.treatments}</Link>
+          <TreatmentsCatalogueLink>{t.nav.treatments}</TreatmentsCatalogueLink>
           <Link href="/#equipa">{t.nav.team}</Link>
           <Link href="/#resultados">{t.nav.results}</Link>
           <Link href="/#contactos">{t.nav.contacts}</Link>

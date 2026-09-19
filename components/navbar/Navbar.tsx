@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Menu, MessageCircle, Phone, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useLanguage } from "@/context/LanguageProvider";
+import { TreatmentsCatalogueLink } from "@/components/navigation/TreatmentsCatalogueLink";
 import { MagneticButton } from "@/components/ui/MagneticButton";
 import { MobileTreatmentNavigation, TreatmentMegaMenu } from "@/components/treatments/TreatmentMegaMenu";
 import { BOOKING_WHATSAPP_URL } from "@/lib/booking";
@@ -36,7 +37,7 @@ export function Navbar() {
       <Link href="/#inicio" scroll className="brand" aria-label="Clínica Beleza — início"><Image src="/images/brand/logo.webp" width={1774} height={887} alt="Clínica Beleza" priority sizes="154px" /></Link>
       <nav className="desktop-nav" aria-label="Navegação principal">
         <Link href="/#clinica">{t.nav.clinic}</Link>
-        <div className="desktop-nav__treatments"><Link href="/tratamentos">{t.nav.treatments}</Link><TreatmentMegaMenu /></div>
+        <div className="desktop-nav__treatments"><TreatmentsCatalogueLink>{t.nav.treatments}</TreatmentsCatalogueLink><TreatmentMegaMenu /></div>
         {links.slice(1).map(([href, label]) => <Link key={href} href={href}>{label}</Link>)}
       </nav>
       <div className="nav-actions">
