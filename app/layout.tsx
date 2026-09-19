@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     images: ["/images/home-hero.webp"],
   },
   robots: { index: true, follow: true },
-  icons: { icon: "/images/brand/favicon.svg?v=2" },
+  icons: { icon: "/images/brand/favicon.svg?v=3" },
 };
 
 export const viewport: Viewport = {

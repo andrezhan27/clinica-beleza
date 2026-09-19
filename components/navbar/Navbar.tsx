@@ -31,6 +31,7 @@ export function Navbar() {
   }, [open]);
   const links = [["/#clinica", t.nav.clinic], ["/#resultados", t.nav.results], ["/#equipa", t.nav.team], ["/#contactos", t.nav.contacts]];
   return (
+    <>
     <header className={`navbar ${compact ? "navbar--compact" : ""}`}>
       <Link href="/" className="brand" aria-label="Clínica Beleza — início"><Image src="/images/brand/logo.webp" width={1774} height={887} alt="Clínica Beleza" priority sizes="154px" /></Link>
       <nav className="desktop-nav" aria-label="Navegação principal">
@@ -52,7 +53,8 @@ export function Navbar() {
         <a className="mobile-menu__cta" href={BOOKING_WHATSAPP_URL} target="_blank" rel="noreferrer" onClick={() => setOpen(false)}>{t.hero.primary}</a>
         <div className="mobile-menu__foot"><a href="tel:+351211500899">+351 211 500 899</a><p>Saldanha · Lisboa</p></div>
       </div>
-      <a className="mobile-sticky-cta" href={BOOKING_WHATSAPP_URL} target="_blank" rel="noreferrer"><MessageCircle size={17} />{t.finalCta.whatsapp}</a>
     </header>
+    <a className="mobile-sticky-cta" href={BOOKING_WHATSAPP_URL} target="_blank" rel="noreferrer"><MessageCircle size={17} />{t.finalCta.whatsapp}</a>
+    </>
   );
 }
