@@ -618,16 +618,17 @@ img { object-fit: cover; }
 .hero__visual img { object-position: center 53%; filter: saturate(.65); }
 .hero__visual::after { background: linear-gradient(180deg, rgba(19,31,29,.54) 0%, rgba(26,35,32,.38) 35%, rgba(21,31,29,.49) 68%, rgba(19,31,29,.68) 100%); }
 .hero__copy { max-width: 72rem; padding: 2rem 0; text-align: center; }
-.hero .eyebrow { margin-bottom: 2rem; color: #fff4dd; letter-spacing: .28em; }
+.hero .hero__eyebrow { display: grid; justify-items: center; gap: .75rem; margin-bottom: 2rem; color: #fff4dd; }
+.hero__eyebrow-primary { font-size: .68rem; letter-spacing: .28em; white-space: nowrap; }
+.hero__eyebrow-location { display: flex; align-items: center; gap: .8rem; color: rgba(255,244,221,.72); font-size: .55rem; font-weight: 600; letter-spacing: .3em; white-space: nowrap; }
+.hero__eyebrow-location::before, .hero__eyebrow-location::after { content: ""; width: 1.8rem; height: 1px; background: rgba(255,244,221,.42); }
 .hero h1 { max-width: none; color: #fffaf0; font-family: var(--font-editorial); font-size: clamp(4.5rem, 9.8vw, 10rem); font-weight: 400; letter-spacing: -.055em; line-height: 1.03; }
 .hero__lead { max-width: 38rem; margin: 1.1rem auto 0; color: #fffaf0; font-size: clamp(1.05rem, 1.7vw, 1.45rem); font-weight: 400; line-height: 1.55; }
 .hero__actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; margin-top: 2.7rem; }
 .hero__actions .button { min-width: 12rem; }
 .hero .button--light { background: rgba(255,255,255,.09); border-color: rgba(255,255,255,.65); backdrop-filter: blur(12px); }
 .hero .button--light:hover { background: rgba(255,255,255,.2); }
-.hero__foot { position: absolute; left: var(--section-inline); right: var(--section-inline); bottom: 2.25rem; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
-.hero__foot > span { flex: 1; font-size: .6rem; letter-spacing: .16em; text-transform: uppercase; }
-.hero__foot > span:last-child { text-align: right; }
+.hero__foot { position: absolute; left: var(--section-inline); right: var(--section-inline); bottom: 2.25rem; display: flex; justify-content: center; align-items: center; gap: 1rem; }
 .hero__scroll { position: static; display: flex; width: auto; height: auto; gap: 1rem; border: 0; border-radius: 0; color: #fffaf0; font-size: .7rem; }
 .hero__scroll svg { width: 2.5rem; height: 2.5rem; padding: .65rem; border: 1px solid rgba(255,255,255,.4); border-radius: 50%; }
 
@@ -713,8 +714,6 @@ img { object-fit: cover; }
   .hero h1 { font-size: clamp(4.2rem, 12vw, 7rem); }
   .hero__visual { margin: 0; height: 100%; min-height: 0; }
   .hero__copy { padding: 1rem 0; }
-  .hero__foot > span:first-child { display: none; }
-  .hero__foot > span:last-child { flex: 0 0 auto; }
   .clinic-story__grid { grid-template-columns: 1fr; gap: 2.5rem; }
   .clinic-story__photo { min-height: 34rem; }
   .clinic-story__photo > img { object-position: center 45%; }
@@ -727,12 +726,14 @@ img { object-fit: cover; }
 @media (max-width: 540px) {
   .hero { min-height: max(42rem, 94svh); padding: 8.5rem 1.25rem 9rem; }
   .hero h1 { font-size: clamp(3.6rem, 14.4vw, 5.2rem); }
-  .hero .eyebrow { max-width: 18rem; margin: 0 auto 1.75rem; font-size: .6rem; line-height: 1.8; }
+  .hero .hero__eyebrow { max-width: 100%; margin: 0 auto 1.75rem; gap: .65rem; line-height: 1.6; }
+  .hero__eyebrow-primary { font-size: .57rem; letter-spacing: .2em; }
+  .hero__eyebrow-location { gap: .65rem; font-size: .5rem; letter-spacing: .25em; }
+  .hero__eyebrow-location::before, .hero__eyebrow-location::after { width: 1.25rem; }
   .hero__lead { max-width: 18rem; font-size: 1rem; }
   .hero__actions { display: flex; flex-direction: column; align-items: center; gap: .75rem; margin-top: 2rem; }
   .hero__actions .button { width: min(100%, 17rem); min-height: 3.4rem; font-size: .77rem; }
   .hero__foot { bottom: 6rem; justify-content: center; }
-  .hero__foot > span:last-child { display: none; }
   .hero__scroll { font-size: .64rem; }
   .clinic-story__heading h2 { font-size: clamp(2.6rem, 10vw, 3.5rem); }
   .clinic-story__photo { min-height: 31rem; border-radius: 1.5rem; }

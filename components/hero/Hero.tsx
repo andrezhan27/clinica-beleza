@@ -14,7 +14,10 @@ export function Hero() {
         <Image src="/images/home-hero.webp" fill preload sizes="100vw" alt={t.hero.imageAlt} />
       </div>
       <div className="hero__copy">
-        <p className="eyebrow">{t.hero.eyebrow}</p>
+        <p className="eyebrow hero__eyebrow">
+          <span className="hero__eyebrow-primary">{t.hero.eyebrow}</span>
+          <span className="hero__eyebrow-location">{t.hero.note}</span>
+        </p>
         <h1>{t.hero.title}</h1>
         <p className="hero__lead">{t.hero.copy}</p>
         <div className="hero__actions">
@@ -22,7 +25,7 @@ export function Hero() {
           <ClinicButton href="#tratamentos" variant="light">{t.hero.secondary}</ClinicButton>
         </div>
       </div>
-      <div className="hero__foot"><span>{language === "pt" ? "SAÚDE · BELEZA · BEM-ESTAR" : "HEALTH · BEAUTY · WELLBEING"}</span><a href="#clinica" className="hero__scroll"><span>{language === "pt" ? "Conheça a nossa essência" : "Discover our approach"}</span><ArrowDown size={17} aria-hidden="true" /></a><span>{t.hero.note}</span></div>
+      <div className="hero__foot"><a href="#clinica" className="hero__scroll"><span>{language === "pt" ? "Conheça a nossa essência" : "Discover our approach"}</span><ArrowDown size={17} aria-hidden="true" /></a></div>
     </section>
   );
 }
