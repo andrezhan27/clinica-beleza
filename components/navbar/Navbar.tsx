@@ -3,17 +3,18 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Menu, MessageCircle, Phone, X } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, type MouseEvent } from "react";
 import { useLanguage } from "@/context/LanguageProvider";
 import { TreatmentsCatalogueLink } from "@/components/navigation/TreatmentsCatalogueLink";
 import { MagneticButton } from "@/components/ui/MagneticButton";
 import { MobileTreatmentNavigation, TreatmentMegaMenu } from "@/components/treatments/TreatmentMegaMenu";
 import { BOOKING_WHATSAPP_URL } from "@/lib/booking";
 
-export function Navbar() {
+export function Navbar({ overlay = false }: { overlay?: boolean }) {
   const { t, language, setLanguage } = useLanguage();
   const [open, setOpen] = useState(false);
   const [compact, setCompact] = useState(false);
+  const [treatmentsOpen, setTreatmentsOpen] = useState(false);
   useEffect(() => {
     const update = () => setCompact(window.scrollY > 24);
     update(); window.addEventListener("scroll", update, { passive: true });
@@ -30,14 +31,23 @@ export function Navbar() {
       window.removeEventListener("keydown", closeOnEscape);
     };
   }, [open]);
+  const handleLogoClick = (event: MouseEvent<HTMLAnchorElement>) => {
+    if (window.location.pathname !== "/") return;
+    event.preventDefault();
+    window.history.replaceState(window.history.state, "", "/");
+    window.scrollTo({ top: 0, behavior: "auto" });
+    setCompact(false);
+    setTreatmentsOpen(false);
+    setOpen(false);
+  };
   const links = [["/#clinica", t.nav.clinic], ["/#resultados", t.nav.results], ["/#equipa", t.nav.team], ["/#contactos", t.nav.contacts]];
   return (
     <>
-    <header className={`navbar ${compact ? "navbar--compact" : ""}`}>
-      <Link href="/#inicio" scroll className="brand" aria-label="Clínica Beleza — início"><Image src="/images/brand/logo.webp" width={1774} height={887} alt="Clínica Beleza" priority sizes="154px" /></Link>
+    <header className={`navbar ${compact ? "navbar--compact" : ""} ${overlay && !compact ? "navbar--overlay" : ""} ${treatmentsOpen ? "navbar--menu-open" : ""}`}>
+      <Link href="/" onClick={handleLogoClick} className="brand" aria-label="Clínica Beleza — início"><Image src="/images/brand/logo.webp" width={1774} height={887} alt="Clínica Beleza" priority sizes="142px" /></Link>
       <nav className="desktop-nav" aria-label="Navegação principal">
         <Link href="/#clinica">{t.nav.clinic}</Link>
-        <div className="desktop-nav__treatments"><TreatmentsCatalogueLink>{t.nav.treatments}</TreatmentsCatalogueLink><TreatmentMegaMenu /></div>
+        <div className="desktop-nav__treatments" onMouseEnter={() => setTreatmentsOpen(true)} onMouseLeave={() => setTreatmentsOpen(false)} onFocus={() => setTreatmentsOpen(true)} onBlur={(event) => { if (!event.currentTarget.contains(event.relatedTarget as Node)) setTreatmentsOpen(false); }}><TreatmentsCatalogueLink>{t.nav.treatments}</TreatmentsCatalogueLink><TreatmentMegaMenu /></div>
         {links.slice(1).map(([href, label]) => <Link key={href} href={href}>{label}</Link>)}
       </nav>
       <div className="nav-actions">

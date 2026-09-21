@@ -1,35 +1,28 @@
 "use client";
 
 import Image from "next/image";
-import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
 import { ArrowDown } from "lucide-react";
 import { useLanguage } from "@/context/LanguageProvider";
 import { ClinicButton } from "@/components/ui/ClinicButton";
-import { MagneticButton } from "@/components/ui/MagneticButton";
 import { BOOKING_WHATSAPP_URL } from "@/lib/booking";
 
 export function Hero() {
-  const { t } = useLanguage();
-  const ref = useRef<HTMLElement>(null);
-  const reduce = useReducedMotion();
-  const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
-  const y = useTransform(scrollYProgress, [0, 1], [0, reduce ? 0 : 60]);
+  const { t, language } = useLanguage();
   return (
-    <section id="inicio" ref={ref} className="hero">
-      <div className="hero__copy">
-        <motion.p className="eyebrow" initial={false}>{t.hero.eyebrow}</motion.p>
-        <motion.h1 initial={false}>{t.hero.title}</motion.h1>
-        <motion.p className="hero__lead" initial={false}>{t.hero.copy}</motion.p>
-        <motion.div className="hero__actions" initial={false}>
-          <MagneticButton><ClinicButton href={BOOKING_WHATSAPP_URL} target="_blank" rel="noreferrer" arrow>{t.hero.primary}</ClinicButton></MagneticButton>
-        </motion.div>
+    <section id="inicio" className="hero">
+      <div className="hero__visual">
+        <Image src="/images/home-hero.webp" fill preload sizes="100vw" alt={t.hero.imageAlt} />
       </div>
-      <motion.div className="hero__visual" style={{ y }} initial={false}>
-        <Image src="/images/home-hero.webp" fill priority sizes="(max-width: 800px) 100vw, 55vw" alt={t.hero.imageAlt} />
-        <div className="hero__image-label"><Image className="hero__image-logo" src="/images/brand/logo.webp" width={138} height={69} alt="" aria-hidden="true" /><span>SAÚDE · BELEZA · BEM-ESTAR</span></div>
-      </motion.div>
-      <a href="#clinica" className="hero__scroll" aria-label="Scroll"><ArrowDown size={17} /></a>
+      <div className="hero__copy">
+        <p className="eyebrow">{t.hero.eyebrow}</p>
+        <h1>{t.hero.title}</h1>
+        <p className="hero__lead">{t.hero.copy}</p>
+        <div className="hero__actions">
+          <ClinicButton href={BOOKING_WHATSAPP_URL} target="_blank" rel="noreferrer" arrow>{t.hero.primary}</ClinicButton>
+          <ClinicButton href="#tratamentos" variant="light">{t.hero.secondary}</ClinicButton>
+        </div>
+      </div>
+      <div className="hero__foot"><span>{language === "pt" ? "SAÚDE · BELEZA · BEM-ESTAR" : "HEALTH · BEAUTY · WELLBEING"}</span><a href="#clinica" className="hero__scroll"><span>{language === "pt" ? "Conheça a nossa essência" : "Discover our approach"}</span><ArrowDown size={17} aria-hidden="true" /></a><span>{t.hero.note}</span></div>
     </section>
   );
 }
