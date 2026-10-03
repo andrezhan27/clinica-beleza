@@ -27,8 +27,8 @@ export default function Home() {
     <Navbar overlay />
     <main>
       <Hero />
-      <ClinicStory />
       <ConcernDiscovery />
+      <ClinicStory />
       <TreatmentCategories />
       <FeaturedTreatments />
       <Team />

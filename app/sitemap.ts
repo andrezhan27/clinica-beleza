@@ -9,6 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     { url: absoluteUrl("/"), changeFrequency: "monthly", priority: 1 },
     { url: absoluteUrl("/tratamentos"), changeFrequency: "monthly", priority: 0.9 },
+    { url: absoluteUrl("/pricing"), changeFrequency: "monthly", priority: 0.9 },
     ...treatmentCategories.map(({ slug }) => ({
       url: absoluteUrl(`/tratamentos/${slug}`),
       changeFrequency: "monthly" as const,

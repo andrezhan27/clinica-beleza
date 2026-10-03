@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, MessageCircle, Phone, X } from "lucide-react";
 import { useEffect, useState, type MouseEvent } from "react";
 import { useLanguage } from "@/context/LanguageProvider";
@@ -12,6 +13,7 @@ import { BOOKING_WHATSAPP_URL } from "@/lib/booking";
 
 export function Navbar({ overlay = false }: { overlay?: boolean }) {
   const { t, language, setLanguage } = useLanguage();
+  const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [compact, setCompact] = useState(false);
   const [treatmentsOpen, setTreatmentsOpen] = useState(false);
@@ -40,15 +42,15 @@ export function Navbar({ overlay = false }: { overlay?: boolean }) {
     setTreatmentsOpen(false);
     setOpen(false);
   };
-  const links = [["/#clinica", t.nav.clinic], ["/#resultados", t.nav.results], ["/#equipa", t.nav.team], ["/#contactos", t.nav.contacts]];
+  const links = [["/#resultados", t.nav.results], ["/#equipa", t.nav.team], ["/#contactos", t.nav.contacts]];
   return (
     <>
     <header className={`navbar ${compact ? "navbar--compact" : ""} ${overlay && !compact ? "navbar--overlay" : ""} ${treatmentsOpen ? "navbar--menu-open" : ""}`}>
       <Link href="/" onClick={handleLogoClick} className="brand" aria-label="Clínica Beleza — início"><Image src="/images/brand/logo.webp" width={1774} height={887} alt="Clínica Beleza" priority sizes="142px" /></Link>
       <nav className="desktop-nav" aria-label="Navegação principal">
-        <Link href="/#clinica">{t.nav.clinic}</Link>
         <div className="desktop-nav__treatments" onMouseEnter={() => setTreatmentsOpen(true)} onMouseLeave={() => setTreatmentsOpen(false)} onFocus={() => setTreatmentsOpen(true)} onBlur={(event) => { if (!event.currentTarget.contains(event.relatedTarget as Node)) setTreatmentsOpen(false); }}><TreatmentsCatalogueLink>{t.nav.treatments}</TreatmentsCatalogueLink><TreatmentMegaMenu /></div>
-        {links.slice(1).map(([href, label]) => <Link key={href} href={href}>{label}</Link>)}
+        <Link href="/pricing" aria-current={pathname === "/pricing" ? "page" : undefined}>{t.nav.pricing}</Link>
+        {links.map(([href, label]) => <Link key={href} href={href}>{label}</Link>)}
       </nav>
       <div className="nav-actions">
         <a className="phone-link" href="tel:+351211500899" aria-label="Ligar para a Clínica Beleza"><Phone size={15} /><span>+351 211 500 899</span></a>
@@ -60,7 +62,7 @@ export function Navbar({ overlay = false }: { overlay?: boolean }) {
       </div>
       <div id="mobile-navigation" className={`mobile-menu ${open ? "mobile-menu--open" : ""}`} aria-hidden={!open}>
         <div className="mobile-menu__top"><Image className="mobile-menu__logo" src="/images/brand/logo.webp" width={1774} height={887} sizes="132px" alt="Clínica Beleza" /><button onClick={() => setOpen(false)} aria-label={t.nav.close}><X size={25} /></button></div>
-        <nav aria-label="Navegação móvel"><Link href="/#inicio" scroll onClick={() => setOpen(false)}><span>01</span>{t.nav.home}</Link><Link href="/#clinica" onClick={() => setOpen(false)}><span>02</span>{t.nav.clinic}</Link><MobileTreatmentNavigation onNavigate={() => setOpen(false)} />{links.slice(1).map(([href, label], index) => <Link key={href} href={href} onClick={() => setOpen(false)}><span>0{index + 4}</span>{label}</Link>)}</nav>
+        <nav aria-label="Navegação móvel"><Link href="/#inicio" scroll onClick={() => setOpen(false)}><span>01</span>{t.nav.home}</Link><Link href="/pricing" aria-current={pathname === "/pricing" ? "page" : undefined} onClick={() => setOpen(false)}><span>02</span>{t.nav.pricing}</Link><MobileTreatmentNavigation onNavigate={() => setOpen(false)} />{links.map(([href, label], index) => <Link key={href} href={href} onClick={() => setOpen(false)}><span>0{index + 4}</span>{label}</Link>)}</nav>
         <a className="mobile-menu__cta" href={BOOKING_WHATSAPP_URL} target="_blank" rel="noreferrer" onClick={() => setOpen(false)}>{t.hero.primary}</a>
         <div className="mobile-menu__foot"><a href="tel:+351211500899">+351 211 500 899</a><p>Saldanha · Lisboa</p></div>
       </div>

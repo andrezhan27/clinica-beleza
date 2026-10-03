@@ -4,10 +4,13 @@ import Image from "next/image";
 import { ArrowDown } from "lucide-react";
 import { useLanguage } from "@/context/LanguageProvider";
 import { ClinicButton } from "@/components/ui/ClinicButton";
-import { BOOKING_WHATSAPP_URL } from "@/lib/booking";
+import { createBookingWhatsAppUrl } from "@/lib/booking";
 
 export function Hero() {
   const { t, language } = useLanguage();
+  const whatsappUrl = createBookingWhatsAppUrl(language === "pt"
+    ? "Olá! Vim através do site da Clínica Beleza e gostaria de receber orientação da equipa. Podem ajudar-me, por favor?"
+    : "Hello! I found Clínica Beleza through the website and would like guidance from the team. Could you help me, please?");
   return (
     <section id="inicio" className="hero">
       <div className="hero__visual">
@@ -21,8 +24,8 @@ export function Hero() {
         <h1>{t.hero.title}</h1>
         <p className="hero__lead">{t.hero.copy}</p>
         <div className="hero__actions">
-          <ClinicButton href={BOOKING_WHATSAPP_URL} target="_blank" rel="noreferrer" arrow>{t.hero.primary}</ClinicButton>
-          <ClinicButton href="#tratamentos" variant="light">{t.hero.secondary}</ClinicButton>
+          <ClinicButton href={whatsappUrl} target="_blank" rel="noreferrer" arrow>{t.hero.primary}</ClinicButton>
+          <ClinicButton href="#encontrar-tratamento" variant="light">{t.hero.secondary}</ClinicButton>
         </div>
       </div>
       <div className="hero__foot"><a href="#clinica" className="hero__scroll"><span>{language === "pt" ? "Conheça a nossa essência" : "Discover our approach"}</span><ArrowDown size={17} aria-hidden="true" /></a></div>
