@@ -2,6 +2,7 @@ import { Navbar } from "@/components/navbar/Navbar";
 import { Hero } from "@/components/hero/Hero";
 import { ClinicStory } from "@/components/sections/ClinicStory";
 import { TreatmentCategories } from "@/components/sections/TreatmentCategories";
+import { ConcernDiscovery } from "@/components/sections/ConcernDiscovery";
 import { Team } from "@/components/sections/Team";
 import { Results } from "@/components/sections/Results";
 import { Testimonials } from "@/components/sections/Testimonials";
@@ -25,6 +26,7 @@ export default function Home() {
     <Navbar overlay />
     <main>
       <Hero />
+      <ConcernDiscovery />
       <ClinicStory />
       <Team />
       <TreatmentCategories />

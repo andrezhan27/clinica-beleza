@@ -11,7 +11,7 @@ export function TreatmentCategories() {
 
   return (
     <section id="tratamentos" className={styles.section} aria-labelledby="home-treatments-title">
-      <div id="encontrar-tratamento" className={styles.content}>
+      <div className={styles.content}>
         <div className={styles.copy}>
           <h2 id="home-treatments-title">{pt ? "Tratamentos" : "Treatments"}</h2>
           <p>{pt ? "Todos os tratamentos e preços, num só lugar." : "All our treatments and prices, in one place."}</p>

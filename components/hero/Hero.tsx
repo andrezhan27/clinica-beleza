@@ -23,7 +23,7 @@ export function Hero() {
         <p className="hero__lead">{t.hero.copy}</p>
         <div className="hero__actions">
           <ClinicButton href={whatsappUrl} target="_blank" rel="noreferrer" arrow>{t.hero.primary}</ClinicButton>
-          <ClinicButton href="/tratamentos" variant="light">{t.hero.secondary}</ClinicButton>
+          <ClinicButton href="#encontrar-tratamento" variant="light">{t.hero.secondary}</ClinicButton>
         </div>
         <p className="hero__booking-note">{language === "pt" ? "Marcação pelo WhatsApp · A equipa confirma a disponibilidade" : "Booking via WhatsApp · Our team confirms availability"}</p>
       </div>
