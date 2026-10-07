@@ -2,7 +2,7 @@ export type Language = "pt" | "en";
 
 const pt = {
   nav: { home: "Início", clinic: "Clínica", pricing: "Preços", treatments: "Tratamentos", results: "Resultados", team: "Equipa", contacts: "Contactos", booking: "Marcação", menu: "Abrir menu", close: "Fechar menu" },
-  hero: { eyebrow: "SAÚDE · BELEZA · BEM-ESTAR", title: "Clínica Beleza", copy: "A beleza de se sentir bem na sua pele.", primary: "Falar no WhatsApp", secondary: "Encontrar o meu tratamento", note: "Saldanha · Lisboa", imageAlt: "Interior luminoso de uma clínica contemporânea" },
+  hero: { eyebrow: "SAÚDE · BELEZA · BEM-ESTAR", title: "Clínica Beleza", copy: "A beleza de se sentir bem na sua pele.", primary: "Marcar avaliação", secondary: "Ver tratamentos", note: "Saldanha · Lisboa", imageAlt: "Interior luminoso de uma clínica contemporânea" },
   intro: { eyebrow: "A essência da Clínica Beleza", title: "A sua melhor versão continua a ser sua.", p1: "Acreditamos numa beleza que se reconhece ao espelho. Nos traços que contam a sua história. E no cuidado que faz sentido para a vida que quer viver.", principles: [
     { title: "A sua identidade, em primeiro lugar.", text: "O que a torna única merece ser preservado. A nossa ideia de beleza valoriza a sua expressão e os seus traços, sem perseguir um rosto ideal." },
     { title: "Cuidar também é saber escolher.", text: "Mais tratamentos não significam mais bem-estar. Acreditamos em escolhas ponderadas, com espaço para compreender as opções e decidir o que faz sentido para si." },
@@ -27,7 +27,7 @@ const pt = {
     { title: "Tecnologia avançada", text: "Protocolos atuais e equipamentos selecionados com critério clínico." },
     { title: "Resultados naturais", text: "Intervenções responsáveis que preservam expressão, identidade e equilíbrio." },
   ] },
-  team: { eyebrow: "A nossa equipa", title: "Especialistas dedicados ao seu cuidado.", intro: "Uma equipa multidisciplinar, unida por uma visão exigente, humana e responsável da medicina estética.", profile: "Ver perfil", members: [
+  team: { eyebrow: "A nossa equipa", title: "Especialistas dedicados ao seu cuidado.", intro: "Uma equipa multidisciplinar, unida por uma visão exigente, humana e responsável da medicina estética.", profile: "Contactar a clínica", members: [
     { name: "Dra. Sofia Almeida", role: "Medicina Estética", specialty: "Avaliação facial e planos personalizados para suavizar sinais de envelhecimento, preservar a expressão e manter um resultado equilibrado.", credential: "Cédula profissional · informação a confirmar" },
     { name: "Dra. Marta Ribeiro", role: "Medicina Capilar", specialty: "Diagnóstico do couro cabeludo e acompanhamento da queda, densidade e vitalidade capilar com protocolos ajustados a cada caso.", credential: "Cédula profissional · informação a confirmar" },
     { name: "Dr. João Matos", role: "Estética Avançada", specialty: "Tecnologias faciais e corporais aplicadas em protocolos para melhorar textura, firmeza, contorno e qualidade da pele.", credential: "Cédula profissional · informação a confirmar" },
@@ -52,7 +52,7 @@ const pt = {
 
 const en: typeof pt = {
   nav: { home: "Home", clinic: "Clinic", pricing: "Pricing", treatments: "Treatments", results: "Results", team: "Team", contacts: "Contact", booking: "Book now", menu: "Open menu", close: "Close menu" },
-  hero: { eyebrow: "HEALTH · BEAUTY · WELLBEING", title: "Clínica Beleza", copy: "The beauty of feeling at home in your skin.", primary: "Chat on WhatsApp", secondary: "Find my treatment", note: "Saldanha · Lisbon", imageAlt: "Bright interior of a contemporary clinic" },
+  hero: { eyebrow: "HEALTH · BEAUTY · WELLBEING", title: "Clínica Beleza", copy: "The beauty of feeling at home in your skin.", primary: "Book consultation", secondary: "View treatments", note: "Saldanha · Lisbon", imageAlt: "Bright interior of a contemporary clinic" },
   intro: { eyebrow: "The Clínica Beleza approach", title: "Your best self is still yourself.", p1: "We believe in beauty you recognise in the mirror. In the features that tell your story. And in care that makes sense for the life you want to live.", principles: [
     { title: "Your identity comes first.", text: "What makes you distinctive deserves to be preserved. Our idea of beauty values your expression and your features, without chasing an ideal face." },
     { title: "Thoughtful care. Considered choices.", text: "More treatments do not mean more wellbeing. We believe in considered choices, with room to understand your options and decide what feels right for you." },
@@ -77,7 +77,7 @@ const en: typeof pt = {
     { title: "Advanced technology", text: "Current protocols and equipment selected with clinical judgement." },
     { title: "Natural results", text: "Responsible treatments that preserve expression, identity and balance." },
   ] },
-  team: { eyebrow: "Our team", title: "Specialists dedicated to your care.", intro: "A multidisciplinary team united by a rigorous, human and responsible vision of aesthetic medicine.", profile: "View profile", members: [
+  team: { eyebrow: "Our team", title: "Specialists dedicated to your care.", intro: "A multidisciplinary team united by a rigorous, human and responsible vision of aesthetic medicine.", profile: "Contact the clinic", members: [
     { name: "Dr Sofia Almeida", role: "Aesthetic Medicine", specialty: "Facial assessment and personalised plans to soften signs of ageing, preserve expression and maintain a balanced result.", credential: "Professional registration · details to be confirmed" },
     { name: "Dr Marta Ribeiro", role: "Hair Medicine", specialty: "Scalp diagnosis and care for hair loss, density and vitality, with protocols tailored to each individual case.", credential: "Professional registration · details to be confirmed" },
     { name: "Dr João Matos", role: "Advanced Aesthetics", specialty: "Facial and body technologies used in protocols to improve skin texture, firmness, contour and overall quality.", credential: "Professional registration · details to be confirmed" },

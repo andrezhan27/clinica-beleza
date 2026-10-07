@@ -96,3 +96,60 @@
 @media (prefers-reduced-motion: reduce) {
   .filters button, .table tbody tr { transition: none; }
 }
+
+/* The price catalogue is the main Treatments browsing surface. */
+.toolbar > div:first-child { flex: 1; }
+.toolbar h1 { font-family: var(--font-manrope), sans-serif; font-weight: 450; }
+.intro { max-width: 36rem; margin: .85rem 0 0; color: var(--muted); font-size: 1rem; line-height: 1.7; }
+.search { flex-shrink: 0; }
+.search input { font-size: 1rem; }
+.filterLabel { font-size: .875rem; letter-spacing: .07em; }
+.filters button { font-size: .9375rem; }
+.filters button span { font-size: .875rem; }
+.sidebarHelp p { font-family: inherit; font-size: 1rem; font-weight: 650; }
+.sidebarHelp a { font-size: .875rem; }
+.resultsMeta, .priceNotes { font-size: .875rem; }
+.categoryHeader h2 { font-family: var(--font-manrope), sans-serif; font-size: clamp(1.45rem, 2.2vw, 1.8rem); font-weight: 500; }
+.categoryHeader p { font-size: .9375rem; }
+.category { border-radius: .65rem; }
+.categoryHeader { padding: 1rem 1.25rem; }
+.categoryHeader h2 { font-size: 1.25rem; font-weight: 550; }
+.entry { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; column-gap: 1.5rem; padding: .8rem 1.25rem; border-bottom: 1px solid #e8e6df; }
+.entry:last-child { border-bottom: 0; }
+.entryInfo { min-width: 0; }
+.entryInfo h3 { margin: 0; color: var(--clinic-blue); font-weight: 600; font-size: 1rem; line-height: 1.5; overflow-wrap: anywhere; }
+.entryInfo h3 a:hover { text-decoration: underline; text-underline-offset: .2em; }
+.caption { margin: .15rem 0 0; color: var(--muted); font-size: .875rem; line-height: 1.5; }
+.entryAction { display: flex; align-items: center; gap: 1.75rem; }
+.entryPrice { max-width: 13rem; margin: 0; color: var(--clinic-blue); font-size: 1rem; font-weight: 650; line-height: 1.5; text-align: right; font-variant-numeric: tabular-nums; }
+.entryPrice small { display: block; color: var(--muted); font-size: .875rem; font-weight: 400; }
+.entryPrice > span { font-size: .875rem; font-weight: 500; }
+.learnMore { min-height: 2.75rem; display: inline-flex; align-items: center; justify-content: flex-end; gap: .4rem; color: var(--clinic-blue); font-size: .875rem; font-weight: 550; white-space: nowrap; }
+.learnMore:hover { color: var(--clinic-logo-gold); }
+.variants { grid-column: 1 / -1; margin-top: .15rem; font-size: .875rem; }
+.variants summary { display: inline-flex; align-items: center; gap: .5rem; min-height: 2rem; cursor: pointer; color: var(--muted); list-style: none; }
+.variants summary:hover { color: var(--clinic-blue); }
+.variants summary::-webkit-details-marker { display: none; }
+.variants summary span { font-size: 1.1rem; }
+.variants[open] summary span { transform: rotate(45deg); }
+.variants ul { margin: .4rem 0 0; padding: 0; list-style: none; border-top: 1px solid var(--border); }
+.variants li { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; padding: .6rem 0; border-bottom: 1px solid var(--border); color: var(--clinic-blue); }
+.variants li:last-child { border-bottom: 0; }
+.variants li small { display: block; color: var(--muted); }
+.variants li strong { font-weight: 600; text-align: right; flex-shrink: 0; }
+.cta h2 { font-family: var(--font-manrope), sans-serif; font-size: clamp(2rem, 3.5vw, 3rem); }
+.ctaActions > a:last-child { color: #183647; font-size: .875rem; }
+.ctaActions > a:last-child:hover { color: #183647; }
+@media (max-width: 1024px) { .entryAction { gap: 1rem; } }
+@media (max-width: 820px) { .filters button { font-size: .875rem; } }
+@media (max-width: 560px) {
+  .categoryHeader { padding: .85rem 1rem; }
+  .categoryHeader h2 { font-size: 1.125rem; }
+  .entry { padding: .65rem 1rem; column-gap: 1rem; }
+  .entryAction { flex-direction: column; align-items: flex-end; gap: .05rem; }
+  .entryPrice { max-width: 9rem; }
+  .variants { margin-top: 0; }
+  .variants summary { min-height: 2.75rem; }
+  .variants li { align-items: flex-start; }
+  .variants li strong { max-width: 40%; flex-shrink: 1; }
+}

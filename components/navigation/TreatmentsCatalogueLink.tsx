@@ -16,7 +16,8 @@ export function TreatmentsCatalogueLink({ onClick, ...props }: TreatmentsCatalog
       event.ctrlKey ||
       event.shiftKey ||
       event.altKey ||
-      window.location.pathname !== "/tratamentos"
+      window.location.pathname !== "/tratamentos" ||
+      window.location.search !== ""
     ) return;
 
     event.preventDefault();
