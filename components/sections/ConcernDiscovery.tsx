@@ -143,7 +143,7 @@ export function ConcernDiscovery() {
             {!unsure && <section id="finder-panel-programmes" role="tabpanel" aria-labelledby="finder-tab-programmes" hidden={activeTab !== "programmes"} tabIndex={0}><p className="treatment-finder__programme-note">{pt ? "O preço indicado é o total do programa ou pack." : "The price shown covers the full programme or pack."}</p>{options.programmes.map((entry) => <GuideOfferCard key={entry.id} entry={entry} language={language} selected={offerId === entry.id} onSelect={() => setOfferId(entry.id)} isProgramme />)}</section>}
           </div>
           {!unsure && <label className={`${styles.guidanceChoice} ${teamGuidance ? styles.selectedOffer : ""}`}><input type="radio" name="finder-offer" value={GUIDANCE_VALUE} checked={teamGuidance} onChange={() => setOfferId(GUIDANCE_VALUE)} className={styles.radio} /><span><strong>{guidanceLabel[language]}</strong><small>{pt ? `Consulta de avaliação · ${assessmentLabel}. Deduzível se realizar o procedimento.` : `Assessment consultation · ${assessmentLabel}. Deducted if you go ahead with the procedure.`}</small></span></label>}
-          <Link href="/tratamentos" className="treatment-finder__all-prices">{pt ? "Ver todos os tratamentos e preços" : "View all treatments and prices"}<ArrowUpRight size={14} aria-hidden="true" /></Link>
+          <Link href="/tratamentos" className="treatment-finder__all-prices">{pt ? "Ver todos os tratamentos" : "View all treatments"}<ArrowUpRight size={14} aria-hidden="true" /></Link>
         </div>}
         {step === 4 && area && concern && selectedOffer && selectedPrice && whatsappUrl && <div>
           <h3 ref={stepHeadingRef} tabIndex={-1}>{pt ? "Vamos dar o próximo passo?" : "Ready for the next step?"}</h3>

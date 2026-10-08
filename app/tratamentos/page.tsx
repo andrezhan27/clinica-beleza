@@ -5,10 +5,10 @@ import { PricingPageContent } from "@/components/pricing/PricingPageContent";
 import { treatmentCatalogue } from "@/data/catalogue";
 
 export const metadata: Metadata = {
-  title: "Tratamentos e preços em Lisboa",
-  description: "Explore os tratamentos e preços da Clínica Beleza em Lisboa. Compare opções por área, conheça cada tratamento e marque uma avaliação pelo WhatsApp.",
+  title: "Tratamentos em Lisboa",
+  description: "Explore os tratamentos da Clínica Beleza em Lisboa. Conheça as opções por área e consulte os detalhes e preços na página de cada tratamento.",
   alternates: { canonical: "/tratamentos" },
-  openGraph: { title: "Tratamentos e preços | Clínica Beleza", description: "Tratamentos, opções e preços organizados por área. Saiba mais e peça orientação à equipa.", url: "/tratamentos", type: "website" },
+  openGraph: { title: "Tratamentos | Clínica Beleza", description: "Tratamentos organizados por área. Consulte os detalhes e preços de cada opção e peça orientação à equipa.", url: "/tratamentos", type: "website" },
 };
 
 export default async function TreatmentsPage({ searchParams }: { searchParams: Promise<{ area?: string | string[]; q?: string | string[] }> }) {

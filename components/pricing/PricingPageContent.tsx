@@ -5,7 +5,7 @@ import { useSearchParams } from "next/navigation";
 import { ArrowUpRight, MessageCircle, Search, X } from "lucide-react";
 import { useLanguage } from "@/context/LanguageProvider";
 import { treatmentCatalogue } from "@/data/catalogue";
-import { filterTreatmentCatalogue, formatCataloguePrice, type CatalogueTreatment } from "@/data/treatment-catalogue";
+import { filterTreatmentCatalogue, type CatalogueTreatment } from "@/data/treatment-catalogue";
 import { createConsultationBookingUrl } from "@/lib/booking";
 import styles from "./PricingPageContent.module.css";
 
@@ -38,40 +38,25 @@ export function PricingPageContent({ initialCategory = "all", initialQuery = "" 
   }
 
   function renderTreatment(entry: CatalogueTreatment) {
-    const prices = entry.variants.filter((variant) => variant.price !== null);
-    const lowest = prices.reduce<(typeof prices)[number] | undefined>((best, price) => !best || price.price! < best.price! ? price : best, undefined);
     const returnParams = new URLSearchParams();
     if (categoryId !== "all") returnParams.set("area", categoryId);
     if (query) returnParams.set("q", query);
     const href = `${entry.href}${returnParams.size ? `?${returnParams}` : ""}`;
     const singleDetail = entry.variants.length === 1 ? entry.variants[0].detail?.[language] : undefined;
     const caption = treatmentCaptions[entry.slug]?.[language] ?? (singleDetail && singleDetail.length <= 55 ? singleDetail : undefined);
-    const isFollowUp = lowest && /seguintes|follow-up/i.test(`${lowest.name[language]} ${lowest.detail?.[language] ?? ""}`);
-    const priceContext = entry.variants.length > 1 && lowest
-      ? isFollowUp ? (pt ? "Seguimento" : "Follow-up") : lowest.detail?.[language] ?? lowest.name[language].split(" · ").slice(1).join(" · ")
-      : undefined;
     return <article className={styles.entry} key={entry.id}>
       <div className={styles.entryInfo}>
         <h3><Link href={href}>{entry.slug === "toxina-botulinica" ? "Botox" : entry.name[language]}</Link></h3>
         {caption && <p className={styles.caption}>{caption}</p>}
       </div>
-      <div className={styles.entryAction}>
-        <p className={styles.entryPrice}>{lowest
-          ? <>{entry.variants.length > 1 && !lowest.from && <>{pt ? "Desde " : "From "}</>}{formatCataloguePrice(lowest, language)}</>
-          : <span>{pt ? (entry.variants.length ? "Sob avaliação" : "Confirmar valor") : (entry.variants.length ? "After assessment" : "Confirm price")}</span>}{priceContext && <small>{priceContext}</small>}</p>
-        <Link href={href} className={styles.learnMore} aria-label={`${pt ? "Saber mais sobre" : "Learn more about"} ${entry.name[language]}`}>{pt ? "Saber mais" : "Learn more"}<ArrowUpRight size={15} aria-hidden="true" /></Link>
-      </div>
-      {entry.variants.length > 1 && <details className={styles.variants}>
-        <summary>{pt ? `${entry.variants.length} opções` : `${entry.variants.length} options`}<span aria-hidden="true">+</span></summary>
-        <ul>{entry.variants.map((variant, index) => <li key={index}><div>{variant.name[language]}{variant.detail && <small>{variant.detail[language]}</small>}</div><strong>{formatCataloguePrice(variant, language)}</strong></li>)}</ul>
-      </details>}
+      <Link href={href} className={styles.learnMore} aria-label={`${pt ? "Saber mais sobre" : "Learn more about"} ${entry.name[language]}`}>{pt ? "Saber mais" : "Learn more"}<ArrowUpRight size={15} aria-hidden="true" /></Link>
     </article>;
   }
 
   return <main className={styles.page}>
     <section id="price-list" className={styles.catalogue} aria-labelledby="price-list-title">
       <div className={styles.toolbar}>
-        <div><h1 id="price-list-title">{pt ? "Tratamentos e preços" : "Treatments and prices"}</h1><p className={styles.intro}>{pt ? "Explore por área ou pesquise um tratamento, um objetivo ou uma preocupação." : "Browse by area or search for a treatment, a goal or a concern."}</p></div>
+        <div><h1 id="price-list-title">{pt ? "Tratamentos" : "Treatments"}</h1><p className={styles.intro}>{pt ? "Explore por área ou pesquise um tratamento, um objetivo ou uma preocupação." : "Browse by area or search for a treatment, a goal or a concern."}</p></div>
         <div className={styles.search}>
           <Search size={19} aria-hidden="true" />
           <label htmlFor="pricing-search" className="sr-only">{pt ? "Pesquisar tratamento ou preocupação" : "Search for a treatment or concern"}</label>
@@ -89,13 +74,13 @@ export function PricingPageContent({ initialCategory = "all", initialQuery = "" 
           <div className={styles.sidebarHelp}><MessageCircle size={20} strokeWidth={1.4} aria-hidden="true" /><p>{pt ? "Não sabe o que escolher?" : "Not sure what to choose?"}</p><a href={bookingUrl} target="_blank" rel="noreferrer">{pt ? "Peça orientação no WhatsApp" : "Ask for guidance on WhatsApp"}<ArrowUpRight size={15} aria-hidden="true" /></a></div>
         </aside>
         <div className={styles.results} id="pricing-results">
-          <div className={styles.resultsMeta}><p role="status" aria-live="polite" aria-atomic="true">{count} {pt ? (count === 1 ? "tratamento" : "tratamentos") : (count === 1 ? "treatment" : "treatments")}{query && <> · “{query}”</>}</p><span>{pt ? "IVA incluído" : "VAT included"}</span></div>
+          <div className={styles.resultsMeta}><p role="status" aria-live="polite" aria-atomic="true">{count} {pt ? (count === 1 ? "tratamento" : "tratamentos") : (count === 1 ? "treatment" : "treatments")}{query && <> · “{query}”</>}</p></div>
           {categories.length === 0 && <div className={styles.empty}><Search size={28} strokeWidth={1.3} aria-hidden="true" /><h3>{pt ? "Não encontrámos esse tratamento." : "We couldn't find that treatment."}</h3><p>{pt ? "Experimente outro nome ou consulte todas as áreas." : "Try another name or browse all areas."}</p><button type="button" onClick={() => updateFilters("all", "")}>{pt ? "Ver todos os tratamentos" : "View all treatments"}<ArrowUpRight size={16} aria-hidden="true" /></button></div>}
           {categories.map((category) => <section className={styles.category} key={category.id} aria-labelledby={`price-${category.id}`}>
             <div className={styles.categoryHeader}><h2 id={`price-${category.id}`}>{category.name[language]}</h2></div>
             {category.items.map(renderTreatment)}
           </section>)}
-          <div className={styles.priceNotes}><p>{pt ? "Como ler os preços" : "Understanding the prices"}</p><ul><li>{pt ? "“Desde” indica o valor inicial. O valor final depende da avaliação e do plano de tratamento." : "“From” indicates a starting price. The final price depends on the assessment and treatment plan."}</li><li>{pt ? "Os valores por ml, por sessão e pelo pack completo estão identificados em cada opção." : "Prices per ml, per session and for the full pack are identified for each option."}</li><li>{pt ? "Quando não existe um valor publicado, confirme-o com a equipa. As cirurgias têm orçamento individual após consulta." : "Where no price is published, confirm it with the team. Surgery is quoted individually following a consultation."}</li></ul></div>
+
         </div>
       </div>
     </section>

@@ -7,6 +7,7 @@ import { Team } from "@/components/sections/Team";
 import { Results } from "@/components/sections/Results";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { Financing } from "@/components/sections/Financing";
+import { FinancingPopup } from "@/components/sections/FinancingPopup";
 import { Location } from "@/components/sections/Location";
 import { Footer } from "@/components/footer/Footer";
 
@@ -35,7 +36,8 @@ export default function Home() {
       <Financing />
       <Location />
     </main>
-    <Footer />
+    <Footer wave />
+    <FinancingPopup />
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(clinicSchema) }} />
   </>;
 }

@@ -28,7 +28,7 @@ export function TreatmentPageContent({ entry, categoryName, catalogueHref = "/tr
   ];
 
   return <main className={styles.page}>
-    <nav className={styles.breadcrumb} aria-label={pt ? "Navegação do tratamento" : "Treatment navigation"}><Link href={catalogueHref}><ArrowLeft size={15} aria-hidden="true" />{pt ? "Tratamentos e preços" : "Treatments and prices"}</Link><span aria-hidden="true">/</span><span aria-current="page">{entry.name[language]}</span></nav>
+    <nav className={styles.breadcrumb} aria-label={pt ? "Navegação do tratamento" : "Treatment navigation"}><Link href={catalogueHref}><ArrowLeft size={15} aria-hidden="true" />{pt ? "Tratamentos" : "Treatments"}</Link><span aria-hidden="true">/</span><span aria-current="page">{entry.name[language]}</span></nav>
     <header className={styles.header}><p className="eyebrow">{categoryName[language]}</p><h1>{entry.name[language]}</h1><p className={styles.description}>{entry.description[language]}</p></header>
     <div className={styles.layout}>
       <div className={styles.content}>
@@ -37,7 +37,7 @@ export function TreatmentPageContent({ entry, categoryName, catalogueHref = "/tr
         <section className={styles.section} aria-labelledby="treatment-process"><h2 id="treatment-process">{pt ? "Como funciona" : "How it works"}</h2><p>{process}</p></section>
         <section className={styles.section} aria-labelledby="treatment-expectations"><h2 id="treatment-expectations">{pt ? "O que esperar" : "What to expect"}</h2><p>{treatment?.results?.[language] ?? (pt ? "A equipa explica na avaliação o que pode esperar desta opção e os cuidados necessários no seu caso." : "During your consultation, the team explains what to expect from this option and the care needed in your situation.")}</p></section>
         <section className={styles.section} aria-labelledby="treatment-faq"><h2 id="treatment-faq">{pt ? "Perguntas frequentes" : "Frequently asked questions"}</h2><div className={styles.faq}>{faq.map((item) => <details key={item.question.pt}><summary>{item.question[language]}<span aria-hidden="true">+</span></summary><p>{item.answer[language]}</p></details>)}</div></section>
-        <Link href={catalogueHref} className={styles.back}><ArrowLeft size={16} aria-hidden="true" />{pt ? "Voltar aos tratamentos e preços" : "Back to treatments and prices"}</Link>
+        <Link href={catalogueHref} className={styles.back}><ArrowLeft size={16} aria-hidden="true" />{pt ? "Voltar aos tratamentos" : "Back to treatments"}</Link>
       </div>
       <aside className={styles.booking} aria-labelledby="treatment-prices">
         <p className={styles.bookingLabel}>{pt ? "Opções e valores" : "Options and prices"}</p><h2 id="treatment-prices">{pt ? "Preço do tratamento" : "Treatment price"}</h2>

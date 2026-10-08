@@ -14,10 +14,10 @@ export function TreatmentCategories() {
       <div className={styles.content}>
         <div className={styles.copy}>
           <h2 id="home-treatments-title">{pt ? "Tratamentos" : "Treatments"}</h2>
-          <p>{pt ? "Todos os tratamentos e preços, num só lugar." : "All our treatments and prices, in one place."}</p>
+          <p>{pt ? "Encontre o cuidado certo para si." : "Find the right care for you."}</p>
         </div>
         <Link href="/tratamentos" className={`button button--primary ${styles.action}`}>
-          <span>{pt ? "Ver tratamentos e preços" : "View treatments and prices"}</span>
+          <span>{pt ? "Ver tratamentos" : "View treatments"}</span>
           <ArrowRight size={19} aria-hidden="true" />
         </Link>
       </div>

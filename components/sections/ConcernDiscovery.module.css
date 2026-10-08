@@ -40,6 +40,7 @@
 .offerLabel { display: flex; flex: 1; min-width: 0; align-items: center; gap: .65rem; min-height: 2.75rem; cursor: pointer; }
 .radio { flex: 0 0 auto; width: 1.1rem; height: 1.1rem; margin: .2rem 0 0; accent-color: var(--clinic-logo-gold); cursor: pointer; }
 .offerContent { flex: 1; min-width: 0; }
+.offerContent :global(.treatment-finder__offer-heading) { align-items: center; }
 .offerName { display: block; color: var(--clinic-blue); font: 400 1.16rem/1.25 var(--font-editorial); }
 .offerDetail { display: block; margin-top: .15rem; color: var(--muted); font-size: .72rem; line-height: 1.4; }
 .offerLink { display: inline-flex; flex-shrink: 0; align-items: center; gap: .3rem; min-height: 2.75rem; padding-left: .7rem; border-left: 1px solid var(--border); color: var(--clinic-blue); font-size: .7rem; font-weight: 700; }

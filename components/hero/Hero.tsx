@@ -1,9 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import { ArrowDown } from "lucide-react";
 import { useLanguage } from "@/context/LanguageProvider";
 import { ClinicButton } from "@/components/ui/ClinicButton";
+import { SectionWave } from "@/components/ui/SectionWave";
 import { createConsultationBookingUrl } from "@/lib/booking";
 
 export function Hero() {
@@ -27,7 +27,7 @@ export function Hero() {
         </div>
         <p className="hero__booking-note">{language === "pt" ? "Marcação pelo WhatsApp · A equipa confirma a disponibilidade" : "Booking via WhatsApp · Our team confirms availability"}</p>
       </div>
-      <div className="hero__foot"><a href="#clinica" className="hero__scroll"><span>{language === "pt" ? "Conheça a nossa essência" : "Discover our approach"}</span><ArrowDown size={17} aria-hidden="true" /></a></div>
+      <SectionWave variant="guide" />
     </section>
   );
 }

@@ -4,11 +4,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { TreatmentsCatalogueLink } from "@/components/navigation/TreatmentsCatalogueLink";
 import { useLanguage } from "@/context/LanguageProvider";
+import { SectionWave } from "@/components/ui/SectionWave";
 
-export function Footer() {
+export function Footer({ wave = false }: { wave?: boolean }) {
   const { t, language } = useLanguage();
   return (
-    <footer className="footer">
+    <footer className={`footer${wave ? " footer--wave" : ""}`}>
+      {wave && <SectionWave variant="footer" />}
       <div className="footer__main">
         <div className="footer__brand">
           <Image src="/images/brand/logo.webp" width={1774} height={887} sizes="190px" alt="Clínica Beleza" />

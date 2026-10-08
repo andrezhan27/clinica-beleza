@@ -1,0 +1,19 @@
+.wave {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: clamp(1.5rem, 4vw, 3.5rem);
+  display: block;
+  pointer-events: none;
+}
+
+.guide {
+  bottom: -1px;
+  color: var(--guide-background);
+  transform: scaleX(-1);
+}
+
+.footer {
+  bottom: calc(100% - 1px);
+  color: var(--footer-background);
+}
