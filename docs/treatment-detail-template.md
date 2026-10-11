@@ -1,38 +1,45 @@
 # Treatment detail template
 
-Every treatment, price variant group and programme uses
+Every treatment, price variant group, consultation and programme uses
 `components/treatments/TreatmentPageContent.tsx` and its CSS module.
 
 ## Page order
 
 1. Back to the catalogue, retaining the selected area and search.
-2. Category, treatment name and a concise treatment-specific description.
-3. A summary of duration, sessions and recovery.
-4. Programme contents, when these are available in the clinic's price list.
-5. How the treatment or assessment works.
-6. What to expect.
-7. Frequently asked questions.
-8. Prices and exact variants, with a treatment-specific WhatsApp booking link.
-   This sits alongside the content on desktop and before the summary on mobile.
+2. Category and treatment name.
+3. **O que é / What it is**: a short, treatment-specific explanation in plain,
+   professional language.
+4. **Em que consiste / What the treatment involves**: how the procedure is carried
+   out or what the consultation covers. Published programme contents appear as a
+   paragraph in this section.
+5. Prices and exact variants, with a treatment-specific WhatsApp booking link.
+   This sits alongside the content on desktop and before the content on mobile.
+
+There are no summary cards, standalone results sections or FAQs.
 
 ## Content sources
 
-- `data/treatments.ts`: existing descriptions, process, results and FAQs in Portuguese and English.
-- `data/pricing.ts`: the confirmed prices, starting prices, quantities, durations and pack contents.
-- `data/treatment-catalogue.ts`: explicit grouping and stable detail routes.
-- `data/catalogue.ts`: the assembled catalogue, enriched with search terms from the existing concern guide.
+- `data/treatment-details.ts`: bilingual descriptions for every detail route,
+  indexed by category and slug; the source of the two main sections.
+- `data/pricing.ts`: confirmed prices, quantities, durations and pack contents.
+  Programme contents are read directly rather than duplicated in descriptions.
+  Morpheus has alternative zones and packs, not one bundle.
+- `data/treatments.ts`: original names, brief catalogue descriptions and search terms.
+- `data/treatment-catalogue.ts`: grouping and stable detail routes.
+- `docs/treatment-content-sources.md`: clinical references and editorial boundaries.
 
-Add clinical detail to the treatment data in both languages. Replace generic defaults
-with approved treatment-specific information when the clinic supplies it. The template
-is deliberately text-led and does not require treatment photographs.
+Keep both languages in sync. Explain technical terms in ordinary language and
+avoid guaranteed outcomes, unconfirmed schedules or assertions that the clinic
+uses a specific product or device when this is not known.
 
-For price-only entries, the page shows the factual category, published options and
-contents, followed by the shared assessment process. It does not invent benefits,
-recovery times or results. A default duration of 30–60 minutes in the original data
-is shown as “Confirmed at consultation” until a specific duration is supplied.
+Lipo Gordura, Coolfit, Foto-biodinâmica and Peeling das Estrelas retain general
+descriptions until the clinic confirms its protocols. Other incompletely specified
+options, such as Olhar Premium and the genetic-test panel, describe only what is
+known. No menopause service is added without clinic confirmation.
 
-Keep pricing in `data/pricing.ts`, rather than copying it into descriptions. Every
-source pricing row appears exactly once in the catalogue and on its detail page.
-Group equivalent variants (such as zones, brands or session packs); keep different
-indications or distinct named programmes separate. Treatments without a confirmed
-standalone price remain available with a request to confirm the value with the team.
+Keep prices in `data/pricing.ts`. Every source pricing row appears exactly once
+in the catalogue and on its detail page. Treatments without a confirmed standalone
+price remain available with a request to confirm the value with the team.
+
+When adding a route, add its PT/EN content to `data/treatment-details.ts` and run
+the content-coverage tests along with the catalogue and guide tests.

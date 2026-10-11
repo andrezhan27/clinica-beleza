@@ -162,7 +162,7 @@ export const treatmentGuideAreas: TreatmentGuideArea[] = [
     ],
   },
   {
-    id: "wellbeing", name: text("Bem-estar", "Wellbeing"), description: text("Relaxar, recuperar, nutrição", "Relaxation, recovery, nutrition"),
+    id: "wellbeing", name: text("Longevidade", "Longevity"), description: text("Bem-estar, nutrição e menopausa", "Wellbeing, nutrition and menopause"),
     goals: [
       goal("stress", "Stress e tensão", "Stress and tension", "Desligar e relaxar", "Switch off and relax", ["massage-relax", "massage-hawaiian"], ["massage-four"]),
       goal("muscle-pain", "Dores musculares", "Muscle aches", "Recuperação após treino ou esforço", "Recovery after exercise or exertion", ["massage-sport", "massage-therapeutic"], ["massage-four"]),

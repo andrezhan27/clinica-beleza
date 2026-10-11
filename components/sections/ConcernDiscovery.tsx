@@ -91,7 +91,7 @@ export function ConcernDiscovery() {
   return <section id="encontrar-tratamento" className="section concern-discovery treatment-finder" aria-labelledby="treatment-finder-title">
     <div className="treatment-finder__intro">
       <p className="eyebrow">{pt ? "Orientação personalizada" : "Personalised guidance"}</p>
-      <h2 id="treatment-finder-title">{pt ? "Encontre o cuidado certo para começar." : "Find the right place to begin."}</h2>
+      <h2 id="treatment-finder-title">{pt ? "Encontre o seu tratamento" : "Find your treatment"}</h2>
       <p>{pt ? "Diga-nos o que gostaria de cuidar. Explore opções e preços, depois decida o próximo passo com a nossa equipa." : "Tell us what you would like to care for. Explore options and prices, then choose your next step with our team."}</p>
       <div className="treatment-finder__assurance"><Check size={17} aria-hidden="true" /><span>{pt ? "Ao seu ritmo · sem compromisso" : "At your pace · no commitment"}</span></div>
       <div className={styles.shortcuts}><a href={createBookingWhatsAppUrl(pt ? "Olá! Gostaria de orientação para escolher o cuidado mais adequado para mim. Podem ajudar-me?" : "Hello! I would like help choosing the right care for me. Could you guide me?")} target="_blank" rel="noreferrer"><MessageCircle size={16} aria-hidden="true" />{pt ? "Prefiro falar com a equipa" : "I'd rather talk to the team"}<ArrowUpRight size={14} aria-hidden="true" /></a><Link href="/tratamentos">{pt ? "Já sei o que procuro" : "I already know what I'm looking for"}<ArrowRight size={14} aria-hidden="true" /></Link></div>

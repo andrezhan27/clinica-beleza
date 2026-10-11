@@ -1,13 +1,26 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { useLanguage } from "@/context/LanguageProvider";
-import { images } from "@/data/images";
+import { teamMembers } from "@/data/team";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 export function Team() {
   const { t } = useLanguage();
-  const teamImages = [images.doctor1, images.doctor2, images.doctor3, images.doctor4, images.doctor5, images.doctor6];
-  return <section id="equipa" className="section team"><Reveal><SectionHeading eyebrow={t.team.eyebrow} title={t.team.title} intro={t.team.intro} /></Reveal><Carousel opts={{ align: "start" }} className="team-carousel"><CarouselContent className="team-track">{t.team.members.map((member, index) => <CarouselItem className="team-slide" key={member.name}><Reveal className="team-card" delay={index * .04}><div className="team-card__image"><Image src={teamImages[index]} fill sizes="(max-width: 560px) 82vw, (max-width: 1000px) 44vw, 300px" alt={member.name} /></div><div className="team-card__body"><div className="team-card__content"><p className="team-card__role">{member.role}</p><h3>{member.name}</h3><p className="team-card__specialty">{member.specialty}</p><small>{member.credential}</small></div><a href="#contactos" aria-label={`${t.team.profile}: ${member.name}`} title={t.team.profile}><ArrowUpRight size={20} /></a></div></Reveal></CarouselItem>)}</CarouselContent><div className="team-carousel__controls"><CarouselPrevious className="team-carousel__button" /><CarouselNext className="team-carousel__button" /></div></Carousel></section>;
+  return <section id="equipa" className="section team">
+    <Reveal><SectionHeading title={t.team.title} intro={t.team.intro} /></Reveal>
+    <div className="team-grid">
+      {teamMembers.map((member, index) => <Reveal className="team-card" delay={index * .04} key={member.slug}>
+        <Link className="team-card__link" href={`/equipa/${member.slug}`} aria-label={`${t.team.profile}: ${member.name}`}>
+          <div className="team-card__image"><Image
+            src={member.image} fill alt={member.name}
+            sizes={`(max-width: 820px) ${45 * (member.portraitCrop?.zoom ?? 1)}vw, (max-width: 1600px) ${23 * (member.portraitCrop?.zoom ?? 1)}vw, ${360 * (member.portraitCrop?.zoom ?? 1)}px`}
+            style={member.portraitCrop ? { scale: member.portraitCrop.zoom, transformOrigin: member.portraitCrop.origin, objectPosition: member.portraitCrop.position } : undefined}
+          /></div>
+          <div className="team-card__body"><div className="team-card__content"><h3>{member.name}</h3></div><span className="team-card__arrow" aria-hidden="true"><ArrowUpRight size={20} /></span></div>
+        </Link>
+      </Reveal>)}
+    </div>
+  </section>;
 }

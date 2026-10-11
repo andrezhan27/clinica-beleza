@@ -10,8 +10,8 @@ import { createBookingWhatsAppUrl } from "../lib/booking.ts";
 const priceFor = (id) => getTreatmentGuidePrice(treatmentGuideOffers[id], priceCategories);
 
 test("the PDF's six areas and 33 concerns are available in Portuguese and English", () => {
-  assert.deepEqual(treatmentGuideAreas.map((area) => area.name.pt), ["Rosto", "Pele", "Corpo", "Cabelo", "Bem-estar", "Rejuvenescimento"]);
-  assert.deepEqual(treatmentGuideAreas.map((area) => area.name.en), ["Face", "Skin", "Body", "Hair", "Wellbeing", "Rejuvenation"]);
+  assert.deepEqual(treatmentGuideAreas.map((area) => area.name.pt), ["Rosto", "Pele", "Corpo", "Cabelo", "Longevidade", "Rejuvenescimento"]);
+  assert.deepEqual(treatmentGuideAreas.map((area) => area.name.en), ["Face", "Skin", "Body", "Hair", "Longevity", "Rejuvenation"]);
   assert.equal(treatmentGuideAreas.flatMap((area) => area.goals).length, 33);
   for (const area of treatmentGuideAreas) {
     assert.ok(area.description.pt && area.description.en);

@@ -21,7 +21,7 @@ export const priceCategories: PriceCategory[] = [
     id: "medicina-estetica", name: text("Medicina estética", "Aesthetic medicine"),
     description: text("Consultas, tratamentos injetáveis e cuidados médicos do rosto.", "Consultations, injectable treatments and medical facial care."),
     items: [
-      item("Consulta de avaliação", "Assessment consultation", 90),
+      item("Consulta de avaliação", "Assessment consultation", 90, { detail: text("Os 90 € da consulta são descontados no valor do tratamento, caso avance.", "The €90 consultation fee is deducted from the treatment cost if you proceed.") }),
       item("Botox · 1 zona", "Botox · 1 area", 140),
       item("Botox · 3 zonas", "Botox · 3 areas", 340, { detail: text("Azzalure", "Azzalure") }),
       item("Botox · 3 zonas", "Botox · 3 areas", 400, { detail: text("Relfydess", "Relfydess") }),

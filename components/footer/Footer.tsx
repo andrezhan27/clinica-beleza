@@ -7,7 +7,7 @@ import { useLanguage } from "@/context/LanguageProvider";
 import { SectionWave } from "@/components/ui/SectionWave";
 
 export function Footer({ wave = false }: { wave?: boolean }) {
-  const { t, language } = useLanguage();
+  const { t } = useLanguage();
   return (
     <footer className={`footer${wave ? " footer--wave" : ""}`}>
       {wave && <SectionWave variant="footer" />}
@@ -31,7 +31,13 @@ export function Footer({ wave = false }: { wave?: boolean }) {
         </div>
         <div>
           <h3>{t.footer.social}</h3>
-          <p className="footer__pending">{language === "pt" ? "Em breve" : "Coming soon"}</p>
+          <a className="footer__social" href="https://www.instagram.com/clinicabeleza.pt/" target="_blank" rel="noopener noreferrer" aria-label="Instagram — Clínica Beleza">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="5" />
+              <circle cx="12" cy="12" r="4" />
+              <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+            </svg>
+          </a>
         </div>
       </div>
       <div className="footer__legal">
@@ -47,7 +53,8 @@ export function Footer({ wave = false }: { wave?: boolean }) {
         </div>
         <div className="footer__bottom">
           <p>{t.footer.rights}</p>
-          <div aria-label="Informação legal em preparação"><span>{t.footer.privacy}</span><span>{t.footer.cookies}</span><span>{t.footer.terms}</span></div>
+          <p>Powered by Intelis</p>
+          <div aria-label="Informação legal em preparação"><span>{t.footer.privacy}</span><span>{t.footer.terms}</span></div>
         </div>
       </div>
     </footer>
