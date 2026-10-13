@@ -66,7 +66,7 @@ export const teamMembers: TeamMember[] = [
   },
   {
     slug: "sara-mateus", name: "Dra. Sara Mateus", image: images.doctor2,
-    portraitCrop: { zoom: 1.8, origin: "22% 8%", profileOrigin: "22% 15%" },
+    portraitCrop: { zoom: 1.25, origin: "center", position: "50% 32%", profilePosition: "center" },
     biography: {
       role: text("Nutricionista Clínica", "Clinical Nutritionist"),
       specialty: text("Nutrição de Precisão e Medicina do Estilo de Vida", "Precision Nutrition and Lifestyle Medicine"),
