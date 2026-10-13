@@ -5,6 +5,7 @@ import { TreatmentCategories } from "@/components/sections/TreatmentCategories";
 import { ConcernDiscovery } from "@/components/sections/ConcernDiscovery";
 import { Team } from "@/components/sections/Team";
 import { Results } from "@/components/sections/Results";
+import { Training } from "@/components/sections/Training";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { Financing } from "@/components/sections/Financing";
 import { FinancingPopup } from "@/components/sections/FinancingPopup";
@@ -32,6 +33,7 @@ export default function Home() {
       <Team />
       <TreatmentCategories />
       <Results />
+      <Training />
       <Testimonials />
       <Financing />
       <Location />

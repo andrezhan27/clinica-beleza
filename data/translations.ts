@@ -2,7 +2,7 @@ export type Language = "pt" | "en";
 
 const pt = {
   nav: { home: "Início", clinic: "Clínica", pricing: "Preços", treatments: "Tratamentos", results: "Resultados", team: "Equipa", contacts: "Contactos", booking: "Marcação", menu: "Abrir menu", close: "Fechar menu" },
-  hero: { eyebrow: "SAÚDE · BELEZA · BEM-ESTAR", title: "Clínica Beleza", copy: "Saúde Interna Cuidados Externos", primary: "Marcar avaliação", secondary: "Encontrar o meu tratamento", note: "Saldanha · Lisboa", imageAlt: "Interior luminoso de uma clínica contemporânea" },
+  hero: { eyebrow: "SAÚDE · BELEZA · BEM-ESTAR", title: "Clínica Beleza", copy: "Saúde Interna Cuidados Externos", primary: "Marcar avaliação", secondary: "Encontrar o meu tratamento", note: "Saldanha | Avenidas Novas · Lisboa", imageAlt: "Interior luminoso de uma clínica contemporânea" },
   intro: { eyebrow: "Clínica Beleza", title: "A clínica", p1: "Acreditamos numa beleza que se reconhece ao espelho. Nos traços que contam a sua história. E no cuidado que faz sentido para a vida que quer viver.", principles: [
     { title: "Beleza natural", text: "O que a torna única merece ser preservado. A nossa ideia de beleza valoriza a sua expressão e os seus traços, sem perseguir um rosto ideal." },
     { title: "Escolhas conscientes", text: "Mais tratamentos não significam mais bem-estar. Acreditamos em escolhas ponderadas, com espaço para compreender as opções e decidir o que faz sentido para si." },
@@ -29,6 +29,7 @@ const pt = {
   ] },
   team: { eyebrow: "A nossa equipa", title: "A nossa equipa", intro: "Conheça os profissionais da Clínica Beleza.", profile: "Ver perfil" },
   results: { eyebrow: "Resultados", title: "Resultados dos tratamentos", copy: "Cada resultado é individual. A avaliação clínica permite definir expectativas responsáveis e um plano adequado à anatomia, saúde e objetivos de cada pessoa.", before: "Antes", after: "Depois", disclaimer: "Imagens ilustrativas de espaço reservado para casos clínicos. Os resultados variam de pessoa para pessoa e não podem ser garantidos." },
+  training: { title: "Formações", status: "Em breve" },
   testimonials: { eyebrow: "Experiência de quem nos visita", title: "Avaliações de clientes", reviews: "Mais de 250 avaliações de clientes", items: [
     { quote: "A Clínica Beleza oferece um serviço de excelência. O atendimento foi personalizado e os resultados naturais e harmoniosos. Voltarei certamente!", name: "Sofia Ferreira" },
     { quote: "Desde a primeira consulta, senti confiança total. A equipa é atenciosa e muito qualificada. Adorei o resultado e recomendo a 100%!", name: "João Nogueira" },
@@ -38,14 +39,14 @@ const pt = {
   ] },
   space: { eyebrow: "A clínica", title: "O nosso espaço", copy: "Em Saldanha, entre tons suaves e luz natural, há um lugar para abrandar e dedicar tempo a si.", alts: ["Entrada e receção da Clínica Beleza", "Sala de tratamento luminosa", "Corredor da Clínica Beleza com o logótipo dourado"] },
   financing: { eyebrow: "Facilidade de pagamento", title: "Opções de pagamento", copy: "Pagamento disponível até 6x sem juros.*", action: "Saber mais", disclaimer: "*Sujeito às condições aplicáveis e aprovação. Informação detalhada disponível na clínica." },
-  location: { eyebrow: "Saldanha · Lisboa", title: "Contactos e localização", address: "Av. João Crisóstomo 63 A, 1050-126 Lisboa", note: "Estamos no coração de Lisboa, junto ao centro comercial El Corte Inglés e à emblemática Gulbenkian.", phone: "+351 211 500 899", email: "info@clinicabeleza.pt", hoursLabel: "Horário", hoursWeekdays: "Segunda–Sexta · 10:00–19:00", hoursSaturday: "Sábado · 09:00–14:00", directions: "Obter direções", booking: "Falar no WhatsApp", map: "Mapa da localização da Clínica Beleza em Saldanha" },
+  location: { eyebrow: "Saldanha · Lisboa", title: "Contactos e localização", address: "Av. João Crisóstomo 63 A, 1050-126 Lisboa", note: "Estamos no coração de Lisboa (Saldanha), junto ao centro comercial El Corte Inglés e à emblemática Gulbenkian.", parking: "Estacionamento público disponível na própria rua.", phone: "+351 211 500 899", email: "info@clinicabeleza.pt", hoursLabel: "Horário", hoursWeekdays: "Segunda–Sexta · 10:00–19:00", hoursSaturday: "Sábado · 09:00–14:00", directions: "Obter direções", booking: "Falar no WhatsApp", map: "Mapa da localização da Clínica Beleza em Saldanha" },
   finalCta: { eyebrow: "O primeiro passo", title: "Comece por uma avaliação personalizada.", copy: "Descubra o tratamento mais adequado aos seus objetivos com o acompanhamento da nossa equipa.", action: "Marcar avaliação", whatsapp: "Falar no WhatsApp" },
   footer: { copy: "Medicina estética, beleza e bem-estar com uma abordagem clínica, personalizada e responsável.", navigation: "Navegação", contact: "Contacto", social: "Acompanhe-nos", regulatory: "Entidades e informação oficial", complaints: "Livro de Reclamações", privacy: "Privacidade", cookies: "Cookies", terms: "Termos", rights: "© 2026 Clínica Beleza. Todos os direitos reservados." },
 };
 
 const en: typeof pt = {
   nav: { home: "Home", clinic: "Clinic", pricing: "Pricing", treatments: "Treatments", results: "Results", team: "Team", contacts: "Contact", booking: "Book now", menu: "Open menu", close: "Close menu" },
-  hero: { eyebrow: "HEALTH · BEAUTY · WELLBEING", title: "Clínica Beleza", copy: "Inner Health, Outer Care", primary: "Book consultation", secondary: "Find my treatment", note: "Saldanha · Lisbon", imageAlt: "Bright interior of a contemporary clinic" },
+  hero: { eyebrow: "HEALTH · BEAUTY · WELLBEING", title: "Clínica Beleza", copy: "Inner Health, Outer Care", primary: "Book consultation", secondary: "Find my treatment", note: "Saldanha | Avenidas Novas · Lisbon", imageAlt: "Bright interior of a contemporary clinic" },
   intro: { eyebrow: "Clínica Beleza", title: "About the clinic", p1: "We believe in beauty you recognise in the mirror. In the features that tell your story. And in care that makes sense for the life you want to live.", principles: [
     { title: "Natural beauty", text: "What makes you distinctive deserves to be preserved. Our idea of beauty values your expression and your features, without chasing an ideal face." },
     { title: "Considered choices", text: "More treatments do not mean more wellbeing. We believe in considered choices, with room to understand your options and decide what feels right for you." },
@@ -72,6 +73,7 @@ const en: typeof pt = {
   ] },
   team: { eyebrow: "Our team", title: "Our team", intro: "Meet the professionals at Clínica Beleza.", profile: "View profile" },
   results: { eyebrow: "Results", title: "Treatment results", copy: "Every result is individual. A clinical assessment helps set responsible expectations and a plan suited to each person's anatomy, health and goals.", before: "Before", after: "After", disclaimer: "Illustrative space reserved for clinical cases. Results vary from person to person and cannot be guaranteed." },
+  training: { title: "Training", status: "Coming soon" },
   testimonials: { eyebrow: "Patient experience", title: "Client reviews", reviews: "More than 250 client reviews", items: [
     { quote: "Clínica Beleza offers an excellent service. The care was personalised and the results natural and harmonious. I will certainly return!", name: "Sofia Ferreira" },
     { quote: "From the first consultation, I felt completely confident. The team is attentive and highly qualified. I loved the result and recommend them 100%!", name: "João Nogueira" },
@@ -81,7 +83,7 @@ const en: typeof pt = {
   ] },
   space: { eyebrow: "The clinic", title: "Our clinic space", copy: "In Saldanha, soft colours and natural light create a place to slow down and make time for yourself.", alts: ["Clínica Beleza entrance and reception", "Bright treatment room", "Clínica Beleza hallway with its gold logo"] },
   financing: { eyebrow: "Flexible payment", title: "Payment options", copy: "Payment available in up to 6 interest-free instalments.*", action: "Learn more", disclaimer: "*Subject to applicable conditions and approval. Full information is available at the clinic." },
-  location: { eyebrow: "Saldanha · Lisbon", title: "Contact and location", address: "Av. João Crisóstomo 63 A, 1050-126 Lisbon", note: "We are at the heart of Lisbon, next to El Corte Inglés shopping mall and the emblematic Gulbenkian.", phone: "+351 211 500 899", email: "info@clinicabeleza.pt", hoursLabel: "Hours", hoursWeekdays: "Monday–Friday · 10am–7pm", hoursSaturday: "Saturday · 9am–2pm", directions: "Get directions", booking: "Chat on WhatsApp", map: "Map showing Clínica Beleza in Saldanha" },
+  location: { eyebrow: "Saldanha · Lisbon", title: "Contact and location", address: "Av. João Crisóstomo 63 A, 1050-126 Lisbon", note: "We are at the heart of Lisbon (Saldanha), next to El Corte Inglés shopping mall and the emblematic Gulbenkian.", parking: "Public parking is available on the same street.", phone: "+351 211 500 899", email: "info@clinicabeleza.pt", hoursLabel: "Hours", hoursWeekdays: "Monday–Friday · 10am–7pm", hoursSaturday: "Saturday · 9am–2pm", directions: "Get directions", booking: "Chat on WhatsApp", map: "Map showing Clínica Beleza in Saldanha" },
   finalCta: { eyebrow: "The first step", title: "Begin with a personalised assessment.", copy: "Discover the treatment best suited to your goals with the guidance of our team.", action: "Book assessment", whatsapp: "Chat on WhatsApp" },
   footer: { copy: "Aesthetic medicine, beauty and wellbeing with a clinical, personalised and responsible approach.", navigation: "Navigation", contact: "Contact", social: "Follow us", regulatory: "Official information and bodies", complaints: "Complaints Book", privacy: "Privacy", cookies: "Cookies", terms: "Terms", rights: "© 2026 Clínica Beleza. All rights reserved." },
 };

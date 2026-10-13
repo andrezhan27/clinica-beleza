@@ -319,6 +319,13 @@ img { object-fit: cover; }
 .disclaimer { display: flex; align-items: flex-start; gap: .65rem; margin: 1.2rem 0 0; color: var(--muted); font-size: .72rem; line-height: 1.6; }
 .disclaimer svg { flex: 0 0 auto; margin-top: .1rem; color: var(--clinic-logo-gold); }
 
+/* Training */
+.training { max-width: none; padding-block: clamp(3rem, 5vw, 4.5rem); padding-inline: max(var(--section-inline), calc((100vw - var(--max-width)) / 2 + var(--section-inline))); background: var(--background-soft); }
+.training__inner { max-width: var(--max-width); margin: 0 auto; padding: clamp(1.5rem, 3vw, 2.4rem) 0; display: flex; align-items: center; justify-content: space-between; gap: 2rem; border-block: 1px solid var(--border); }
+.training h2 { margin: 0; color: var(--clinic-blue); font: 400 clamp(2.4rem, 4.5vw, 4.5rem)/1 var(--font-editorial); letter-spacing: -.04em; }
+.training__inner > p { display: inline-flex; align-items: center; gap: .65rem; margin: 0; color: var(--clinic-blue); font-size: .72rem; font-weight: 750; letter-spacing: .12em; text-transform: uppercase; }
+.training__inner > p span { width: .5rem; height: .5rem; border-radius: 50%; background: var(--clinic-gold-dark); }
+
 /* Testimonials */
 .testimonials { max-width: none; padding-inline: max(var(--section-inline), calc((100vw - var(--max-width)) / 2 + var(--section-inline))); background: var(--clinic-blue); color: white; }
 .testimonials .section-heading { max-width: 980px; }
@@ -359,6 +366,7 @@ img { object-fit: cover; }
 .contact-list svg { flex: 0 0 auto; color: var(--clinic-logo-gold); }
 .contact-list small { display: block; color: var(--muted); font-size: .6rem; text-transform: uppercase; letter-spacing: .12em; }
 .contact-list .contact-list__note { max-width: 30rem; margin-top: .45rem; font-size: .7rem; line-height: 1.55; letter-spacing: 0; text-transform: none; }
+.contact-list .contact-list__parking { margin-top: .3rem; color: var(--clinic-blue); font-size: .68rem; font-weight: 650; line-height: 1.5; letter-spacing: 0; text-transform: none; }
 .location__actions { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 2rem; }
 
 /* Footer */
@@ -765,6 +773,8 @@ img { object-fit: cover; }
   .concern-list { gap: .65rem; }
   .concern-list a { padding-inline: .9rem; font-size: .82rem; }
   .concern-list a:hover { padding-inline: .9rem; }
+  .training__inner { align-items: flex-start; flex-direction: column; gap: 1.15rem; }
+  .training h2 { font-size: clamp(2.6rem, 12vw, 3.8rem); }
   .testimonials__controls { align-items: flex-start; flex-direction: column; gap: 1.1rem; }
   .testimonial { width: 82vw; min-height: 21rem; padding: 1.75rem; }
   .testimonial:first-child { padding-left: 1.75rem; }
@@ -856,6 +866,7 @@ img { object-fit: cover; }
 
 @media (max-width: 820px) {
   .treatment-finder__intro { position: static; padding-block: 0; }
+  .treatment-finder__assurance { display: none; }
   .treatment-finder__panel { min-height: 0; }
 }
 @media (max-width: 560px) {
