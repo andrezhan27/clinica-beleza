@@ -54,3 +54,26 @@ No wavelength, injectable ingredient or device model is inferred.
 Olhar Premium, the genetic-test panel, exosome products and surgery options also
 avoid unconfirmed specifics. The guide uses Longevidade / Longevity and the
 requested menopause wording, but no menopause service is invented.
+
+## Personalised guide info controls
+
+Short PT / EN explanations in `data/treatment-guide-descriptions.ts` were checked
+on 12 October 2026 against the clinical and manufacturer references above.
+They explain the technique and main purpose in one or two sentences. Icons are
+limited to technical or unfamiliar treatment and programme names; ordinary
+consultations, familiar massages, fillers and exfoliation retain their labels.
+Pack variants share technique explanations; quantities stay in the price data.
+
+Additional product identity references:
+
+- [Galderma — Azzalure product information](https://www.medicines.org.uk/emc/product/6584/smpc).
+- [Galderma — Relfydess product information](https://www.medicines.org.uk/emc/product/100710/smpc).
+- [Microblading and the Science Behind it](https://pmc.ncbi.nlm.nih.gov/articles/PMC7982014/).
+- [Leeds Teaching Hospitals — Bruxism](https://flipbooks.leedsth.nhs.uk/LN006166.pdf).
+
+Azzalure and Relfydess are identified as botulinum toxin brands, with no efficacy,
+duration or superiority comparison. The three-zone label comes from the clinic's
+price list, without assuming the exact zones or making a local licensing claim.
+Migraine copy is limited to prevention of chronic migraine following assessment.
+Exosome benefits are described as still under study. Clinic-named treatments with
+unconfirmed protocols remain general; no ingredients or device are inferred.

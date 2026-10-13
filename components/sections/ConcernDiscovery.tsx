@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import { ArrowLeft, ArrowRight, ArrowUpRight, Check, MessageCircle, RotateCcw } from "lucide-react";
 import { useLanguage } from "@/context/LanguageProvider";
 import {
@@ -13,6 +13,8 @@ import { priceCategories } from "@/data/pricing";
 import { getTreatmentBySlug } from "@/data/treatments";
 import type { Language } from "@/data/translations";
 import { createBookingWhatsAppUrl } from "@/lib/booking";
+import { getTreatmentGuideDescription } from "@/data/treatment-guide-descriptions";
+import { GuideTreatmentInfo } from "./GuideTreatmentInfo";
 
 import styles from "./ConcernDiscovery.module.css";
 
@@ -29,14 +31,19 @@ function GuideOfferCard({ entry, language, selected, onSelect, isProgramme = fal
   const price = getTreatmentGuidePrice(entry, priceCategories);
   const name = entry.name?.[language] ?? price.name[language];
   const treatment = entry.treatmentSlug ? getTreatmentBySlug(entry.treatmentSlug) : undefined;
+  const description = getTreatmentGuideDescription(entry.id);
+  const inputId = useId();
+  const nameId = `${inputId}-name`;
+  const detailId = `${inputId}-detail`;
   return <article className={`treatment-finder__offer ${styles.selectableOffer} ${selected ? styles.selectedOffer : ""} ${isProgramme ? "treatment-finder__offer--programme" : ""}`}>
-    <label className={styles.offerLabel}>
-      <input type="radio" name="finder-offer" value={entry.id} checked={selected} onChange={onSelect} className={styles.radio} />
-      <span className={styles.offerContent}>
-        <span className="treatment-finder__offer-heading"><span><span className={styles.offerName}>{name}</span>{price.detail && <span className={styles.offerDetail}>{price.detail[language]}</span>}</span><span className="treatment-finder__offer-price"><strong>{formatTreatmentGuidePrice(price, language)}</strong>{price.unit !== "ml" && <small>{price.unit === "pack" ? (pt ? "total do pack" : "full pack") : isProgramme ? (pt ? "total do programa" : "full programme") : price.unit === "session" ? (pt ? "por sessão" : "per session") : (pt ? "IVA incluído" : "VAT included")}</small>}</span></span>
+    <div className={styles.offerLabel}>
+      <label htmlFor={inputId} className={styles.offerSelectionArea} aria-hidden="true" />
+      <input id={inputId} type="radio" name="finder-offer" value={entry.id} checked={selected} onChange={onSelect} className={styles.radio} aria-labelledby={nameId} aria-describedby={price.detail ? detailId : undefined} />
+      <div className={styles.offerContent}>
+        <div className="treatment-finder__offer-heading"><div><div className={styles.offerTitleRow}><label id={nameId} htmlFor={inputId} className={styles.offerName}>{name}</label>{description && <GuideTreatmentInfo name={`${name}${price.detail ? ` · ${price.detail[language]}` : ""}`} description={description[language]} language={language} />}</div>{price.detail && <label id={detailId} htmlFor={inputId} className={styles.offerDetail}>{price.detail[language]}</label>}</div><label htmlFor={inputId} className="treatment-finder__offer-price"><strong>{formatTreatmentGuidePrice(price, language)}</strong>{price.unit !== "ml" && <small>{price.unit === "pack" ? (pt ? "total do pack" : "full pack") : isProgramme ? (pt ? "total do programa" : "full programme") : price.unit === "session" ? (pt ? "por sessão" : "per session") : (pt ? "IVA incluído" : "VAT included")}</small>}</label></div>
         {unsure && <span className={styles.deductionNote}>{pt ? "O valor da consulta é deduzido se realizar o procedimento." : "The consultation fee is deducted if you go ahead with the procedure."}</span>}
-      </span>
-    </label>
+      </div>
+    </div>
     {treatment && <Link className={styles.offerLink} href={`/tratamentos/${treatment.category}/${treatment.slug}`} target="_blank" rel="noreferrer" aria-label={`${pt ? "Conhecer" : "Learn more about"} ${name}`}>{pt ? "Conhecer" : "Learn more"}<ArrowUpRight size={14} aria-hidden="true" /></Link>}
   </article>;
 }
@@ -117,9 +124,11 @@ export function ConcernDiscovery() {
           <h3 ref={stepHeadingRef} tabIndex={-1}>{pt ? "O que mais o preocupa?" : "What concerns you most?"}</h3>
           <p className="treatment-finder__supporting-copy">{pt ? "Escolha a opção que melhor descreve o que gostaria de cuidar." : "Choose the option that best describes what you would like to care for."}</p>
           <button type="button" onClick={() => chooseGoal(UNSURE_CONCERN_ID)} className="treatment-finder__choice treatment-finder__choice--unsure" aria-pressed={unsure}><span><strong>{unsureLabel[language]}</strong><small>{pt ? `Comece por uma consulta de avaliação · ${assessmentLabel}` : `Start with an assessment consultation · ${assessmentLabel}`}</small></span><ArrowRight size={18} aria-hidden="true" /></button>
-          <div className="treatment-finder__choices treatment-finder__choices--compact">{area.goals.map((entry) => <button type="button" key={entry.id} onClick={() => chooseGoal(entry.id)} className="treatment-finder__choice" aria-pressed={goalId === entry.id}>
-            <span><strong>{entry.name[language]}</strong><small>{entry.description[language]}</small></span><ArrowRight size={18} aria-hidden="true" />
-          </button>)}</div>
+          <div className={`treatment-finder__choices treatment-finder__choices--compact ${styles.concernGrid}`}>{area.goals.map((entry) => <div key={entry.id} className={`treatment-finder__choice ${styles.concernChoice} ${goalId === entry.id ? styles.selectedConcern : ""}`}>
+            <button type="button" onClick={() => chooseGoal(entry.id)} className={styles.concernSelectionArea} aria-pressed={goalId === entry.id} aria-label={entry.name[language]} />
+            <span className={styles.concernTitleRow}><strong>{entry.name[language]}</strong><GuideTreatmentInfo name={entry.name[language]} description={entry.description[language]} language={language} /></span>
+            <ArrowRight size={18} aria-hidden="true" />
+          </div>)}</div>
         </div>}
 
         {step === 3 && area && concern && options && <div>

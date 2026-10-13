@@ -12,9 +12,9 @@ export function DoctorProfile({ member }: { member: TeamMember }) {
   const { language } = useLanguage();
   const pt = language === "pt";
   const bio = member.biography;
-  const bookingUrl = createBookingWhatsAppUrl(pt
+  const bookingUrl = createBookingWhatsAppUrl(bio?.booking.message?.[language] ?? (pt
     ? `Olá! Gostaria de marcar uma consulta de nutrição com a ${member.name} na Clínica Beleza. Podem ajudar-me com a disponibilidade?`
-    : `Hello! I would like to book a nutrition consultation with ${member.name} at Clínica Beleza. Could you help me with availability?`);
+    : `Hello! I would like to book a nutrition consultation with ${member.name} at Clínica Beleza. Could you help me with availability?`));
 
   return <main className={styles.page}>
     <Link href="/#equipa" className={styles.back}><ArrowLeft size={16} aria-hidden="true" />{pt ? "Voltar à equipa" : "Back to the team"}</Link>

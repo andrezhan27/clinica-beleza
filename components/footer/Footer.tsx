@@ -53,7 +53,7 @@ export function Footer({ wave = false }: { wave?: boolean }) {
         </div>
         <div className="footer__bottom">
           <p>{t.footer.rights}</p>
-          <p>Powered by Intelis</p>
+          <p><a href="https://intelis.pt" target="_blank" rel="noopener noreferrer">Powered by Intelis</a></p>
           <div aria-label="Informação legal em preparação"><span>{t.footer.privacy}</span><span>{t.footer.terms}</span></div>
         </div>
       </div>

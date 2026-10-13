@@ -20,13 +20,50 @@ export type TeamMember = {
     specialty: LocalizedText;
     introduction: LocalizedText;
     sections: ProfileSection[];
-    booking: { title: LocalizedText; subtitle: LocalizedText; description: LocalizedText };
+    booking: { title: LocalizedText; subtitle: LocalizedText; description: LocalizedText; message?: LocalizedText };
   };
 };
 
 // Portuguese biography supplied by the clinic; preserve its wording.
 export const teamMembers: TeamMember[] = [
-  { slug: "luiz-moura", name: "Dr. Luiz Moura", image: images.doctor1, portraitCrop: { zoom: 1.25, origin: "60% 57%" } },
+  {
+    slug: "luiz-moura", name: "Dr. Luiz Moura", image: images.doctor1,
+    portraitCrop: { zoom: 1.25, origin: "60% 57%" },
+    biography: {
+      role: text("Médico", "Physician"),
+      specialty: text("Endocrinologia e Metabologia", "Endocrinology and Metabology"),
+      introduction: text(
+        "Médico com mais de 29 anos de experiência, com atuação dedicada à Endocrinologia e Metabologia, integrando também conhecimentos em Nutrologia e Medicina do Exercício e do Esporte.",
+        "A physician with more than 29 years of experience, whose practice focuses on Endocrinology and Metabology, also drawing on knowledge of Nutritional Medicine and Exercise and Sports Medicine.",
+      ),
+      sections: [{
+        title: text("Perfil", "Profile"),
+        paragraphs: [
+          text(
+            "Ao longo do seu percurso profissional, desenvolveu uma abordagem médica centrada na avaliação global e individualizada do paciente, com especial atenção à saúde hormonal e metabólica, composição corporal, controlo do peso, preservação da massa muscular, menopausa, saúde hormonal masculina, prevenção e longevidade.",
+            "Throughout his career, he has developed a medical approach centred on a comprehensive, individualised assessment of each patient, with particular attention to hormonal and metabolic health, body composition, weight management, preservation of muscle mass, menopause, men’s hormonal health, prevention and longevity.",
+          ),
+          text(
+            "A sua prática procura compreender não apenas sintomas ou resultados isolados de exames, mas a interação entre metabolismo, hormônios, nutrição, atividade física, sono e estilo de vida, construindo estratégias de acompanhamento adaptadas às necessidades de cada pessoa.",
+            "His practice seeks to understand not only symptoms or individual test results, but also the interaction between metabolism, hormones, nutrition, physical activity, sleep and lifestyle, developing care strategies tailored to each person’s needs.",
+          ),
+          text(
+            "O Dr. Luiz Moura defende uma medicina baseada em conhecimento científico, prevenção e acompanhamento responsável, com o objetivo de promover saúde, vitalidade, capacidade física e qualidade de vida ao longo dos anos.",
+            "Dr. Luiz Moura advocates medicine grounded in scientific knowledge, prevention and responsible ongoing care, with the aim of promoting health, vitality, physical capacity and quality of life over the years.",
+          ),
+        ],
+      }],
+      booking: {
+        title: text("Marcação", "Booking"),
+        subtitle: text("Comece o seu acompanhamento", "Begin Your Care"),
+        description: text("Marque uma consulta com o Dr. Luiz Moura.", "Book a consultation with Dr. Luiz Moura."),
+        message: text(
+          "Olá! Gostaria de marcar uma consulta com o Dr. Luiz Moura na Clínica Beleza. Podem ajudar-me com a disponibilidade?",
+          "Hello! I would like to book a consultation with Dr. Luiz Moura at Clínica Beleza. Could you help me with availability?",
+        ),
+      },
+    },
+  },
   {
     slug: "sara-mateus", name: "Dra. Sara Mateus", image: images.doctor2,
     portraitCrop: { zoom: 1.8, origin: "22% 8%", profileOrigin: "22% 15%" },

@@ -37,12 +37,26 @@
 .selectableOffer { display: flex; align-items: center; gap: .85rem; padding: .5rem .75rem; margin-bottom: .5rem; transition: border-color .2s ease, box-shadow .2s ease; }
 .selectableOffer:has(input:focus-visible), .guidanceChoice:has(input:focus-visible) { outline: 2px solid var(--clinic-logo-gold); outline-offset: 3px; }
 .selectableOffer.selectedOffer, .guidanceChoice.selectedOffer { border-color: var(--clinic-logo-gold); box-shadow: 0 0 0 1px var(--clinic-logo-gold); }
-.offerLabel { display: flex; flex: 1; min-width: 0; align-items: center; gap: .65rem; min-height: 2.75rem; cursor: pointer; }
-.radio { flex: 0 0 auto; width: 1.1rem; height: 1.1rem; margin: .2rem 0 0; accent-color: var(--clinic-logo-gold); cursor: pointer; }
+.offerLabel { position: relative; display: flex; flex: 1; min-width: 0; align-items: center; gap: .65rem; min-height: 2.75rem; }
+.offerSelectionArea { position: absolute; inset: 0; }
+.offerLabel label { cursor: pointer; }
+.offerTitleRow { display: flex; align-items: center; gap: .1rem; }
+.offerTitleRow button { flex-basis: 2.125rem; width: 2.125rem; height: 2.125rem; }
+.radio { position: relative; flex: 0 0 auto; width: 1.1rem; height: 1.1rem; margin: .2rem 0 0; accent-color: var(--clinic-logo-gold); cursor: pointer; }
 .offerContent { flex: 1; min-width: 0; }
 .offerContent :global(.treatment-finder__offer-heading) { align-items: center; }
 .offerName { display: block; color: var(--clinic-blue); font: 400 1.16rem/1.25 var(--font-editorial); }
-.offerDetail { display: block; margin-top: .15rem; color: var(--muted); font-size: .72rem; line-height: 1.4; }
+.offerDetail { display: block; margin-top: .05rem; color: var(--muted); font-size: .72rem; line-height: 1.4; }
+.concernGrid { gap: .45rem; margin-top: .8rem; }
+.concernChoice { position: relative; min-height: 3.5rem !important; padding: .4rem .75rem !important; border-radius: .9rem !important; background: rgba(255, 253, 249, .72); box-shadow: 0 1px 0 rgba(35, 50, 43, .025); transition: background .16s ease, border-color .16s ease, box-shadow .16s ease, transform .16s ease; }
+.concernChoice:hover { transform: translateY(-1px); }
+.concernSelectionArea { position: absolute; z-index: 1; inset: 0; width: 100%; padding: 0; border: 0; border-radius: inherit; background: transparent; cursor: pointer; }
+.concernChoice:has(.concernSelectionArea:focus-visible) { outline: 2px solid var(--clinic-logo-gold); outline-offset: 3px; }
+.concernTitleRow { position: relative; z-index: 2; display: flex !important; align-items: center; gap: .2rem !important; pointer-events: none; }
+.concernTitleRow strong { font-size: 1.06rem; line-height: 1.15; }
+.concernTitleRow button { flex-basis: 2.25rem; width: 2.25rem; height: 2.25rem; pointer-events: auto; }
+.concernChoice > svg { position: relative; z-index: 2; pointer-events: none; }
+.selectedConcern { border-color: rgba(133, 103, 47, .72) !important; background: #fffdf9; box-shadow: 0 6px 18px rgba(35, 50, 43, .06) !important; }
 .offerLink { display: inline-flex; flex-shrink: 0; align-items: center; gap: .3rem; min-height: 2.75rem; padding-left: .7rem; border-left: 1px solid var(--border); color: var(--clinic-blue); font-size: .7rem; font-weight: 700; }
 .offerLink svg { flex-shrink: 0; }
 .offerLink:hover { color: var(--clinic-logo-gold); }
@@ -88,9 +102,10 @@
   .stepLabel { font-size: .59rem; }
   .offerLabel { gap: .6rem; }
   .offerName { font-size: 1.15rem; }
-  .selectableOffer { gap: .6rem; }
+  .selectableOffer { flex-wrap: wrap; gap: .25rem .6rem; }
+  .offerLabel { flex-basis: 100%; }
   .offerLabel :global(.treatment-finder__offer-heading) { gap: .5rem; }
-  .offerLink { padding-left: .5rem; font-size: .65rem; }
+  .offerLink { margin-left: auto; padding-left: 0; border-left: 0; font-size: .7rem; }
   .summary { padding-inline: .85rem; }
   .summary > div { grid-template-columns: 6rem minmax(0, 1fr); gap: .6rem; }
   .primaryAction { font-size: .75rem; }

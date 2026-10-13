@@ -1,0 +1,71 @@
+.trigger, .close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 2.75rem;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  color: var(--clinic-blue);
+  background: transparent;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+.close:hover { background: #f0e9dc; }
+.close:focus-visible { outline: 2px solid var(--clinic-logo-gold); outline-offset: 2px; }
+.trigger { position: relative; }
+.trigger::before {
+  content: "";
+  position: absolute;
+  width: 1.625rem;
+  height: 1.625rem;
+  border-radius: 50%;
+  background: #f0e9dc;
+  opacity: 0;
+  transform: scale(.9);
+  transition: opacity 180ms ease, transform 220ms cubic-bezier(.16, 1, .3, 1);
+}
+.trigger svg { position: relative; }
+.trigger:hover::before, .trigger[aria-expanded="true"]::before, .trigger:focus-visible::before { opacity: 1; transform: scale(1); }
+.trigger:focus-visible { outline: none; }
+.trigger:focus-visible::before { outline: 2px solid var(--clinic-logo-gold); outline-offset: 2px; }
+.content {
+  --info-motion-offset: 6px;
+  z-index: 100;
+  box-sizing: border-box;
+  width: min(20rem, calc(100vw - 2rem));
+  max-height: var(--radix-popover-content-available-height);
+  overflow-y: auto;
+  padding: .75rem 1rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  background: #fffdf9;
+  color: var(--clinic-blue);
+  box-shadow: 0 8px 30px rgba(35, 50, 43, .16);
+  font-family: var(--font-sans), sans-serif;
+  transform-origin: var(--radix-popover-content-transform-origin);
+}
+.content[data-side="bottom"] { --info-motion-offset: -6px; }
+.content[data-state="open"] { animation: info-open 260ms cubic-bezier(.16, 1, .3, 1) both; }
+.content[data-state="closed"] { animation: info-close 80ms ease-out both; pointer-events: none; }
+
+@keyframes info-open {
+  from { opacity: 0; transform: translateY(var(--info-motion-offset)) scale(.975); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes info-close {
+  from { opacity: 1; transform: translateY(0) scale(1); }
+  to { opacity: 0; transform: translateY(var(--info-motion-offset)) scale(.985); }
+}
+.heading { display: flex; align-items: center; gap: .5rem; }
+.heading strong { flex: 1; font-size: .86rem; line-height: 1.4; }
+.close { margin-right: -.5rem; }
+.content p { margin: .25rem 0 0; font-size: .86rem; line-height: 1.65; }
+.arrow { fill: #fffdf9; }
+
+@media (prefers-reduced-motion: reduce) {
+  .trigger::before { transition: none; transform: none; }
+  .content[data-state] { animation: none; }
+}
