@@ -20,7 +20,7 @@ export type TeamMember = {
     specialty: LocalizedText;
     introduction: LocalizedText;
     sections: ProfileSection[];
-    booking: { title: LocalizedText; subtitle: LocalizedText; description: LocalizedText; message?: LocalizedText };
+    booking: { title: LocalizedText; subtitle: LocalizedText; description: LocalizedText; message?: LocalizedText; label?: LocalizedText };
   };
 };
 
@@ -186,7 +186,79 @@ export const teamMembers: TeamMember[] = [
     },
   },
   { slug: "jerusa-oliveira", name: "Dra. Jerusa Oliveira", image: images.doctor3, portraitCrop: { zoom: 1, origin: "center" } },
-  { slug: "erika-siordia", name: "Dra. Erika Siordia", image: images.doctor4, portraitCrop: { zoom: 1, origin: "center", position: "50% 39%", profilePosition: "50% 12%" } },
+  {
+    slug: "erika-siordia", name: "Dra. Erika Siordia", image: images.doctor4,
+    portraitCrop: { zoom: 1, origin: "center", position: "50% 39%", profilePosition: "50% 12%" },
+    biography: {
+      role: text("Médica", "Physician"),
+      specialty: text("Medicina Estética e Harmonização Facial", "Aesthetic Medicine and Facial Harmonisation"),
+      introduction: text(
+        "Médica com seis anos de experiência na área da Medicina Estética, com formação pós-graduada em Medicina Estética pela Universidade de Alcalá, em Espanha, e membro agregado da Sociedade Portuguesa de Medicina Estética (SPME). O seu percurso é marcado pela formação contínua, pela prática clínica e pela atividade docente.",
+        "A physician with six years of experience in Aesthetic Medicine, with postgraduate training in Aesthetic Medicine at the University of Alcalá in Spain, and an associate member of the Portuguese Society of Aesthetic Medicine (SPME). Her career is marked by continuing education, clinical practice and teaching.",
+      ),
+      sections: [{
+        title: text("Perfil", "Profile"),
+        paragraphs: [
+          text(
+            "Ao longo da sua trajetória, tem desenvolvido uma abordagem individualizada, centrada na harmonia facial, na qualidade dos tecidos e na preservação da naturalidade. O seu trabalho integra conhecimentos de anatomia facial e técnicas avançadas de harmonização, remodelação facial e bioestimulação, privilegiando a seleção criteriosa dos tratamentos e a obtenção de resultados equilibrados e personalizados.",
+            "Throughout her career, she has developed an individualised approach focused on facial harmony, tissue quality and preserving a natural appearance. Her work combines knowledge of facial anatomy with advanced techniques in harmonisation, facial remodelling and biostimulation, prioritising careful treatment selection and balanced, personalised results.",
+          ),
+          text(
+            "Paralelamente à atividade clínica, dedica-se à formação de profissionais desde 2020, tendo sido convidada a integrar equipas formativas na área da harmonização facial. Colabora com a SEAFA na formação e atualização profissional, participando como formadora em programas de formação anatómica avançada com recurso a preparados fresh frozen, realizados nos laboratórios de anatomia da Universidade de Barcelona, em Bellvitge, e da Universidade de Vic da Catalunha.",
+            "Alongside her clinical practice, she has been training professionals since 2020 and has been invited to join teaching teams in facial harmonisation. She collaborates with SEAFA on professional training and continuing education, teaching advanced anatomical training programmes using fresh-frozen specimens at the anatomy laboratories of the University of Barcelona in Bellvitge and the University of Vic in Catalonia.",
+          ),
+          text(
+            "A sua prática é orientada pelo rigor técnico, pela atualização científica e por uma visão individualizada da Medicina Estética, procurando aliar conhecimento anatómico, precisão técnica e respeito pelas características de cada paciente, com o objetivo de promover resultados naturais, harmoniosos e adaptados às necessidades individuais.",
+            "Her practice is guided by technical rigour, current scientific knowledge and an individualised view of Aesthetic Medicine. She seeks to combine anatomical knowledge, technical precision and respect for each patient’s characteristics to promote natural, harmonious results tailored to individual needs.",
+          ),
+        ],
+      }],
+      booking: {
+        title: text("Marcação", "Booking"),
+        subtitle: text("Comece o seu acompanhamento", "Begin Your Care"),
+        description: text("Marque uma consulta de Medicina Estética com a Dra. Erika Siordia.", "Book an Aesthetic Medicine consultation with Dra. Erika Siordia."),
+        message: text(
+          "Olá! Gostaria de marcar uma consulta de Medicina Estética com a Dra. Erika Siordia na Clínica Beleza. Podem ajudar-me com a disponibilidade?",
+          "Hello! I would like to book an Aesthetic Medicine consultation with Dra. Erika Siordia at Clínica Beleza. Could you help me with availability?",
+        ),
+      },
+    },
+  },
+  {
+    slug: "raquel", name: "Raquel", image: images.raquel,
+    portraitCrop: { zoom: 1.4, origin: "60% 52%", position: "50% 47%", profilePosition: "50% 47%" },
+    biography: {
+      role: text("Rececionista", "Receptionist"),
+      specialty: text("Acolhimento e Apoio ao Paciente", "Patient Welcome and Support"),
+      introduction: text(
+        "A Raquel integra a equipa de receção da Clínica Beleza, acolhendo cada paciente com simpatia, atenção e disponibilidade, desde o primeiro contacto.",
+        "Raquel is part of Clínica Beleza’s reception team, welcoming each patient with warmth, care and a willingness to help from the very first contact.",
+      ),
+      sections: [{
+        title: text("Perfil", "Profile"),
+        paragraphs: [
+          text(
+            "No dia a dia da clínica, apoia a marcação e a organização de consultas, esclarece questões práticas e facilita a comunicação entre os pacientes e a equipa clínica. Procura tornar cada visita simples e tranquila, com um atendimento próximo e atento às necessidades de cada pessoa.",
+            "In the clinic’s daily routine, she helps book and organise appointments, answers practical questions and facilitates communication between patients and the clinical team. She aims to make every visit straightforward and comfortable, offering friendly support attentive to each person’s needs.",
+          ),
+          text(
+            "Com discrição e sentido de organização, contribui para um ambiente acolhedor e para uma experiência de acompanhamento cuidada em todas as etapas do contacto com a Clínica Beleza.",
+            "With discretion and an organised approach, she helps create a welcoming environment and a considerate experience at every stage of each patient’s contact with Clínica Beleza.",
+          ),
+        ],
+      }],
+      booking: {
+        title: text("Receção", "Reception"),
+        subtitle: text("Estamos aqui para ajudar", "We’re Here to Help"),
+        description: text("Contacte a receção da Clínica Beleza para marcar a sua consulta ou esclarecer questões sobre a sua visita.", "Contact Clínica Beleza’s reception to book your appointment or ask questions about your visit."),
+        message: text(
+          "Olá! Gostaria de falar com a receção da Clínica Beleza para obter informações ou marcar uma consulta. Podem ajudar-me?",
+          "Hello! I would like to contact Clínica Beleza’s reception for information or to book an appointment. Could you help me?",
+        ),
+        label: text("Contactar receção", "Contact reception"),
+      },
+    },
+  },
 ];
 
 export const getTeamMember = (slug: string) => teamMembers.find((member) => member.slug === slug);

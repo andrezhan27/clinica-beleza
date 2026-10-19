@@ -11,6 +11,7 @@ export const images = {
   doctor2: "/images/team/dra-sara-mateus.webp",
   doctor3: "/images/team/dra-jerusa-oliveira.webp",
   doctor4: "/images/team/dra-erika-siordia.webp",
+  raquel: "/images/team/raquel.webp",
   clinic1: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1400&q=85",
   clinic2: "https://images.unsplash.com/photo-1512678080530-7760d81faba6?auto=format&fit=crop&w=1200&q=85",
   clinic3: "https://images.unsplash.com/photo-1631248055158-edec7a3c072b?auto=format&fit=crop&w=1200&q=85",

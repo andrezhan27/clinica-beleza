@@ -46,7 +46,7 @@ export function DoctorProfile({ member }: { member: TeamMember }) {
         <p className="eyebrow">{bio.booking.title[language]}</p>
         <h2 id="profile-booking">{bio.booking.subtitle[language]}</h2>
         <p>{bio.booking.description[language]}</p>
-        <a href={bookingUrl} className="button button--primary" target="_blank" rel="noreferrer"><MessageCircle size={18} aria-hidden="true" />{pt ? "Marcar consulta" : "Book consultation"}<ArrowUpRight size={16} aria-hidden="true" /></a>
+        <a href={bookingUrl} className="button button--primary" target="_blank" rel="noreferrer"><MessageCircle size={18} aria-hidden="true" />{bio.booking.label?.[language] ?? (pt ? "Marcar consulta" : "Book consultation")}<ArrowUpRight size={16} aria-hidden="true" /></a>
       </section>
     </div>}
   </main>;
