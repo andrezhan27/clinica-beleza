@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import { LanguageProvider } from "@/context/LanguageProvider";
 import { siteUrl } from "@/lib/site-url";
 import "@fontsource-variable/manrope";
@@ -41,7 +42,10 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="pt" data-scroll-behavior="smooth">
-      <body><LanguageProvider>{children}</LanguageProvider></body>
+      <body>
+        <LanguageProvider>{children}</LanguageProvider>
+        <Analytics />
+      </body>
     </html>
   );
 }
