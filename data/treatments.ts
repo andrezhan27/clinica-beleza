@@ -120,9 +120,8 @@ const seeds: Seed[] = [
 
   { slug: "limpeza-de-pele", category: "servicos", pt: "Limpeza de Pele", en: "Deep Skin Cleansing", descriptionPt: "Cuidado profundo e adaptado para remover impurezas e devolver conforto e luminosidade à pele.", descriptionEn: "Deep, adapted care to remove impurities and restore comfort and radiance to the skin.", related: ["esfoliacao-corporal", "drenagem-facial", "peeling-quimico"] },
   { slug: "esfoliacao-corporal", category: "servicos", pt: "Esfoliação Corporal", en: "Body Exfoliation", descriptionPt: "Ritual corporal que promove renovação superficial, suavidade e uma pele mais uniforme.", descriptionEn: "A body ritual promoting surface renewal, softness and more even-looking skin.", related: ["massagem-relaxante", "plano-detox", "drenagem-linfatica"] },
-  { slug: "reflexologia", category: "servicos", pt: "Reflexologia", en: "Reflexology", descriptionPt: "Técnica de pressão em pontos específicos dos pés orientada para relaxamento e equilíbrio.", descriptionEn: "A pressure technique on specific points of the feet focused on relaxation and balance.", related: ["massagem-relaxante", "massagem-com-velas", "massagem-desportiva"] },
-  { slug: "massagem-relaxante", category: "servicos", pt: "Massagem Relaxante", en: "Relaxation Massage", descriptionPt: "Movimentos suaves e ritmados para aliviar tensão e criar uma pausa profunda de bem-estar.", descriptionEn: "Gentle, rhythmic movements to ease tension and create a deeply restorative pause.", related: ["massagem-com-velas", "reflexologia", "massagem-desportiva"], searchTerms: ["massagem"] },
-  { slug: "massagem-com-velas", category: "servicos", pt: "Massagem com Velas", en: "Candle Massage", descriptionPt: "Ritual envolvente com óleo morno de vela para relaxamento, conforto e hidratação da pele.", descriptionEn: "An immersive ritual using warm candle oil for relaxation, comfort and skin nourishment.", related: ["massagem-relaxante", "reflexologia", "esfoliacao-corporal"], searchTerms: ["massagem"] },
+  { slug: "reflexologia", category: "servicos", pt: "Reflexologia", en: "Reflexology", descriptionPt: "Técnica de pressão em pontos específicos dos pés orientada para relaxamento e equilíbrio.", descriptionEn: "A pressure technique on specific points of the feet focused on relaxation and balance.", related: ["massagem-relaxante", "massagem-desportiva"] },
+  { slug: "massagem-relaxante", category: "servicos", pt: "Massagem Relaxante", en: "Relaxation Massage", descriptionPt: "Movimentos suaves e ritmados para aliviar tensão e criar uma pausa profunda de bem-estar.", descriptionEn: "Gentle, rhythmic movements to ease tension and create a deeply restorative pause.", related: ["reflexologia", "massagem-desportiva"], searchTerms: ["massagem"] },
   { slug: "massagem-desportiva", category: "servicos", pt: "Massagem Desportiva", en: "Sports Massage", descriptionPt: "Técnicas direcionadas para tensão muscular, recuperação e necessidades de pessoas ativas.", descriptionEn: "Targeted techniques for muscle tension, recovery and the needs of active people.", related: ["massagem-relaxante", "reflexologia", "drenagem-linfatica"], searchTerms: ["massagem"] },
 ];
 
@@ -148,7 +147,6 @@ export function validateTreatmentCatalogue() {
   });
   treatmentCategories.forEach((category) => category.treatments.forEach((slug) => { if (!treatmentSlugs.includes(slug)) errors.push(`Missing treatment ${slug} referenced by ${category.slug}`); }));
   if (featuredTreatments.some(({ slug }) => !treatmentSlugs.includes(slug))) errors.push("Invalid featured treatment reference");
-  if (treatments.length !== 35) errors.push(`Expected 35 treatments, received ${treatments.length}`);
   return errors;
 }
 

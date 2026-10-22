@@ -225,7 +225,7 @@ export const teamMembers: TeamMember[] = [
     },
   },
   {
-    slug: "raquel", name: "Raquel", image: images.raquel,
+    slug: "raquel", name: "Raquel Prates", image: images.raquel,
     portraitCrop: { zoom: 1.4, origin: "60% 52%", position: "50% 47%", profilePosition: "50% 47%" },
     biography: {
       role: text("Rececionista", "Receptionist"),

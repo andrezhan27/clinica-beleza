@@ -291,12 +291,6 @@ export const treatmentDetails: Record<string, TreatmentDetail> = {
     "O profissional ajusta a pressão e as zonas trabalhadas após uma breve conversa sobre as suas necessidades. A opção de massagem relaxante completa publicada no catálogo tem 60 minutos. Pode indicar as áreas onde sente maior tensão e as suas preferências de pressão.",
     "The practitioner adjusts pressure and areas treated after a brief discussion of your needs. The published full relaxation massage option lasts 60 minutes. You can identify areas of tension and your preferred pressure.",
   ),
-  "servicos/massagem-com-velas": detail(
-    "A massagem com velas utiliza um produto próprio para massagem que, ao aquecer, se transforma num óleo morno. Combina movimentos relaxantes com a aplicação desse óleo para proporcionar conforto e suavidade à pele.",
-    "Candle massage uses a product made specifically for massage that melts into a warm oil. It combines relaxing movements with the oil's application to provide comfort and soften the skin.",
-    "O óleo é aplicado a uma temperatura confortável e a massagem é adaptada às zonas escolhidas. A equipa verifica a sensibilidade ao calor e aos ingredientes. O produto utilizado deve ser próprio para contacto com a pele.",
-    "The oil is applied at a comfortable temperature and massage is adapted to selected areas. The team checks heat sensitivity and ingredient sensitivities. The product used must be intended for skin contact.",
-  ),
   "servicos/massagem-desportiva": detail(
     "A massagem desportiva trabalha músculos e tecidos sujeitos ao esforço físico. Pode ajudar no conforto muscular e na sensação de recuperação após atividade, sendo adaptada ao tipo de exercício e às áreas de maior tensão.",
     "Sports massage works on muscles and soft tissues affected by physical activity. It may improve muscular comfort and the feeling of recovery after exercise, with techniques adapted to your activity and areas of tension.",

@@ -63,7 +63,7 @@ export const treatmentCategories: TreatmentCategory[] = [
     shortDescription: { pt: "Rituais especializados que completam o seu plano de cuidado.", en: "Specialist rituals that complement your care plan." },
     introduction: { pt: "Cuidados complementares para recuperar, equilibrar e prolongar os benefícios do seu plano.", en: "Complementary care to restore balance and extend the benefits of your plan." },
     coverImage: "/images/treatments/servicos/category.webp?v=ef4a8a84",
-    treatments: ["limpeza-de-pele", "esfoliacao-corporal", "reflexologia", "massagem-relaxante", "massagem-com-velas", "massagem-desportiva"],
+    treatments: ["limpeza-de-pele", "esfoliacao-corporal", "reflexologia", "massagem-relaxante", "massagem-desportiva"],
   },
 ];
 
